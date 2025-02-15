@@ -6,6 +6,16 @@ import Naslov from "@/components/global/Naslov";
 import Filteri from "@/components/meni/Filteri";
 import Footer from "@/components/global/Footer";
 
+// export async function generateStaticParams() {
+//   return [
+//     { category: "slane" },
+//     { category: "slatke" },
+//     { category: "proteinske" },
+//     { category: "sendvici" },
+//     { category: "pice" },
+//   ];
+// }
+
 const CategoryPage = async ({ params }) => {
   let { category } = await params;
 

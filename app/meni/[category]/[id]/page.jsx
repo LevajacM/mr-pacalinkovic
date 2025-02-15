@@ -5,6 +5,52 @@ import Filteri from "@/components/meni/Filteri";
 import Footer from "@/components/global/Footer";
 import Breadcrumbs from "@/components/single-product/Breadcrumbs";
 
+export async function generateStaticParams() {
+  return [
+    { category: "slane", id: "1" },
+    { category: "slane", id: "2" },
+    { category: "slane", id: "3" },
+    { category: "slane", id: "4" },
+    { category: "slane", id: "5" },
+    { category: "slane", id: "6" },
+    { category: "slane", id: "7" },
+
+    { category: "slatke", id: "8" },
+    { category: "slatke", id: "9" },
+    { category: "slatke", id: "10" },
+    { category: "slatke", id: "11" },
+    { category: "slatke", id: "12" },
+    { category: "slatke", id: "13" },
+    { category: "slatke", id: "14" },
+    { category: "slatke", id: "15" },
+    { category: "slatke", id: "16" },
+    { category: "slatke", id: "17" },
+    { category: "slatke", id: "18" },
+    { category: "slatke", id: "19" },
+    { category: "slatke", id: "20" },
+    { category: "slatke", id: "21" },
+    { category: "slatke", id: "22" },
+
+    { category: "proteinske", id: "23" },
+    { category: "proteinske", id: "24" },
+    { category: "proteinske", id: "25" },
+    { category: "proteinske", id: "26" },
+    { category: "proteinske", id: "27" },
+
+    { category: "sendvici", id: "28" },
+    { category: "sendvici", id: "29" },
+
+    { category: "pice", id: "30" },
+    { category: "pice", id: "31" },
+    { category: "pice", id: "32" },
+    { category: "pice", id: "33" },
+    { category: "pice", id: "34" },
+    { category: "pice", id: "35" },
+    { category: "pice", id: "36" },
+    { category: "pice", id: "37" },
+  ];
+}
+
 const SingleProductPage = async ({ params }) => {
   let { id } = await params;
   id = parseInt(id);
