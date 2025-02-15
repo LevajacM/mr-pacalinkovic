@@ -2,12 +2,14 @@ import { getSingleProduct } from "@/utils/actions";
 import Image from "next/image";
 import Naslov from "@/components/global/Naslov";
 import Filteri from "@/components/meni/Filteri";
+import Footer from "@/components/global/Footer";
+import Breadcrumbs from "@/components/single-product/Breadcrumbs";
 
 const SingleProductPage = async ({ params }) => {
   let { id } = await params;
   id = parseInt(id);
   const artikal = getSingleProduct(id);
-  const { title, price, img, desc, dodaci } = artikal;
+  const { title, price, img, desc, dodaci, category } = artikal;
 
   return (
     <>
@@ -18,7 +20,10 @@ const SingleProductPage = async ({ params }) => {
         textColor='text-emerald-900'
       />
       <Filteri />
-      <div className='w-full h-[100vh] md:h-[50vh] grid md:grid-cols-2 gap-12 pt-20'>
+      <div className='hidden md:flex w-full h-auto px-3 md:px-6'>
+        <Breadcrumbs title={title} category={category} />
+      </div>
+      <div className='w-full h-[100vh] md:h-[50vh] grid md:grid-cols-2 gap-12 pt-20 md:pt-4 px-3 md:px-6'>
         <div className='relative w-full h-full'>
           <Image
             src={img}
@@ -68,6 +73,7 @@ const SingleProductPage = async ({ params }) => {
           )}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

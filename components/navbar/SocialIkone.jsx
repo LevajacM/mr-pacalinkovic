@@ -7,7 +7,7 @@ const SocialIkone = () => {
       {socialIcons.map((icon, i) => {
         return (
           <li key={i}>
-            <Link href={icon.href}>
+            <Link href={icon.href} target='_blank'>
               <button className='hover:scale-[1.2] transition duration-300 hover:text-emerald-900'>
                 {icon.icon}
               </button>

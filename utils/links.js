@@ -72,7 +72,7 @@ export const products = [
     thumbnail: "/meni/sremacki-trio.jpg",
   },
   {
-    title: "kulen",
+    title: "Kulen",
     link: "/meni/slane/3",
     thumbnail: "/meni/kulen.jpg",
   },
@@ -109,7 +109,7 @@ export const products = [
   },
 
   {
-    title: "Kikiriki Puterom i Džem",
+    title: "Kikiriki Puter i Džem",
     link: "/meni/proteinske/23",
     thumbnail: "/meni/prot-kikiriki-puter-dz.jpg",
   },

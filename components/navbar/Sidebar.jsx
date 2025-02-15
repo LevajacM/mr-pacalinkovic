@@ -30,7 +30,9 @@ const Sidebar = () => {
                 key={item.href}
                 className='hover:text-emerald-900 hover:scale-125 transition  duration-300 ease-in-out'
               >
-                <Link href={item.href}>{item.icon}</Link>
+                <Link href={item.href} target='_blank'>
+                  {item.icon}
+                </Link>
               </li>
             );
           })}
