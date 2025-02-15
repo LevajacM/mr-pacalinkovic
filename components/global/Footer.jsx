@@ -6,7 +6,7 @@ const Footer = () => {
       <div className=' w-full h-[52vh]  grid items-end justify-center'>
         <FloatingDockElement />
       </div>
-      <div className='w-full text-center '>
+      <div className='w-full text-center text-emerald-900'>
         <p>Copyright © Mister Pačalinković 2025. </p>
       </div>
     </>

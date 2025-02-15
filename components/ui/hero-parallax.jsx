@@ -4,12 +4,9 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { TextGenerateEffect } from "./text-generate-effect";
-import { GiSolarSystem } from "react-icons/gi";
-import { GrSolaris } from "react-icons/gr";
 
 const words1 = `Mr Pačalinković 👑`;
 const words2 = `Najbolje palačinke u solarnom sistemu ☀️`;
-<GrSolaris />;
 
 export const HeroParallax = ({ products }) => {
   const firstRow = products.slice(0, 5);
@@ -62,16 +59,17 @@ export const HeroParallax = ({ products }) => {
         }}
         className=''
       >
-        <motion.div className='flex flex-row-reverse space-x-reverse space-x-10 md:space-x-20 mb-10  md:mb-20'>
-          {firstRow.map((product) => (
+        <motion.div className='flex flex-row-reverse space-x-reverse space-x-10 mb-10  md:space-x-15   md:mb-20'>
+          {firstRow.map((product, i) => (
             <ProductCard
               product={product}
               translate={translateX}
               key={product.title}
+              className={i === 0 && "gap-x-8"}
             />
           ))}
         </motion.div>
-        <motion.div className='flex flex-row mb-10  md:mb-20 space-x-10 md:space-x-20 '>
+        <motion.div className='flex flex-row mb-10  md:mb-20 space-x-10 md:space-x-15 '>
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -80,7 +78,7 @@ export const HeroParallax = ({ products }) => {
             />
           ))}
         </motion.div>
-        <motion.div className='flex flex-row-reverse space-x-reverse space-x-10 md:space-x-20'>
+        <motion.div className='flex flex-row-reverse space-x-reverse space-x-10 md:space-x-15'>
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -101,14 +99,15 @@ export const Header = () => {
         <TextGenerateEffect
           words={words1}
           trajanje={2}
-          klase='text-3xl sm:text-4xl lg:text-5xl text-orange-600'
+          klase='text-3xl sm:text-4xl lg:text-5xl'
         />
       </div>
-      <div className='max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 '>
+      <div className='max-w-2xl text-base md:text-xl lg:text-2xl mt-8 dark:text-neutral-200 '>
         <TextGenerateEffect
           words={words2}
           trajanje={8}
-          klase='text-3xl sm:text-4xl lg:text-5xl text-orange-300'
+          klase='text-3xl sm:text-4xl lg:text-5xl'
+          textColor='text-emerald-800'
         />
       </div>
     </div>
@@ -139,7 +138,7 @@ export const ProductCard = ({ product, translate }) => {
           alt={product.title}
         />
       </Link>
-      <div className='absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-xl'></div>
+      <div className='absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-50 bg-emerald-900 pointer-events-none rounded-xl'></div>
       <h2 className='absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white'>
         {product.title}
       </h2>

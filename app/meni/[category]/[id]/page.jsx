@@ -14,7 +14,8 @@ const SingleProductPage = async ({ params }) => {
       <Naslov
         tekst={title}
         trajanje={0.7}
-        klase='text-2xl sm:text-3xl lg:text-4xl text-orange-600'
+        klase='text-2xl sm:text-3xl lg:text-4xl'
+        textColor='text-emerald-900'
       />
       <Filteri />
       <div className='w-full h-[100vh] md:h-[50vh] grid md:grid-cols-2 gap-12 pt-20'>
@@ -26,19 +27,21 @@ const SingleProductPage = async ({ params }) => {
             priority
             className='h-[30vh] md:h-[50vh]  object-cover rounded-2xl'
           />
-          <span className='absolute top-3 right-3 rounded-full h-16 grid items-center justify-center font-bold bg-primary px-[5px]'>
+          <span className='absolute top-3 right-3 rounded-full h-16 grid items-center justify-center font-bold bg-emerald-600 text-emerald-50 px-[7px]'>
             {price}din
           </span>
         </div>
-        <div className='w-full h-full text-left '>
+        <div className='w-full h-full text-center md:text-left '>
           {desc.length !== 0 && (
             <>
-              <h3 className='text-lg sm:text-xl lg:text-2xl pb-2'>Sastojci:</h3>
+              <h3 className='text-lg sm:text-xl lg:text-2xl pb-2 text-emerald-900'>
+                Sastojci:
+              </h3>
               <ul className='list-none pb-2'>
                 {desc.map((item) => {
                   return (
                     <li key={item}>
-                      <p className='capitalize text-xs sm:text-sm md:text-base'>
+                      <p className='capitalize text-sm  md:text-base text-emerald-700'>
                         {item}
                       </p>
                     </li>
@@ -49,14 +52,14 @@ const SingleProductPage = async ({ params }) => {
           )}
           {dodaci.length !== 0 && (
             <>
-              <h3 className='text-lg sm:text-xl lg:text-2xl pb-2'>
+              <h3 className='text-lg sm:text-xl lg:text-2xl pb-2 text-emerald-900'>
                 Dodaci po želji:
               </h3>
               <ul className='list-none pb-2'>
                 {dodaci.map((item) => {
                   return (
                     <li key={item}>
-                      <p className='text-xs'>{item}</p>
+                      <p className='text-sm text-emerald-700'>{item}</p>
                     </li>
                   );
                 })}

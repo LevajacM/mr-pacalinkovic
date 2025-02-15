@@ -7,7 +7,7 @@ const ToggleBtn = ({ toggle }) => {
       asChild
       variant='secondary'
       size='icon'
-      className='cursor-pointer !bg-transparent hover:scale-[1.2] delay-200 hover:rotate-90 transition  duration-300 ease-in-out sm:hidden absolute top-8 right-6'
+      className='cursor-pointer !bg-transparent hover:scale-[1.2] delay-200 hover:rotate-90 transition  duration-300 ease-in-out sm:hidden absolute top-8 right-6 text-emerald-900'
       onClick={toggle}
     >
       <HiMenu />

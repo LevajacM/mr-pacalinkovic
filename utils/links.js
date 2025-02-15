@@ -35,82 +35,83 @@ export const socialIcons = [
 
 export const products = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
-    thumbnail: "/meni/duo-mix.jpg",
+    title: "Palačinka sa kremom od jagode",
+    link: "/meni/slatke/22",
+    thumbnail: "/meni/jagoda-krem.jpg",
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
-    thumbnail: "/meni/duo-mix.jpg",
+    title: "Kinder Bueno",
+    link: "/meni/slatke/12",
+    thumbnail: "/meni/kinder.jpg",
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail: "/meni/duo-mix.jpg",
-  },
-
-  {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail: "/meni/duo-mix.jpg",
-  },
-  {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail: "/meni/duo-mix.jpg",
-  },
-  {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail: "/meni/duo-mix.jpg",
+    title: "Kit Kat",
+    link: "/meni/slatke/11",
+    thumbnail: "/meni/kitket.jpg",
   },
 
   {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail: "/meni/duo-mix.jpg",
+    title: "Rafaelo",
+    link: "/meni/slatke/9",
+    thumbnail: "/meni/rafaelo.jpg",
   },
   {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail: "/meni/duo-mix.jpg",
+    title: "Nutela",
+    link: "/meni/slatke/10",
+    thumbnail: "/meni/nutela.jpg",
   },
   {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail: "/meni/duo-mix.jpg",
-  },
-  {
-    title: "SmartBridge",
-    link: "https://smartbridgetech.com",
-    thumbnail: "/meni/duo-mix.jpg",
-  },
-  {
-    title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail: "/recenzije/rec1.png",
+    title: "Mr Tost Sendvič",
+    link: "/meni/sendviči/28",
+    thumbnail: "/meni/mr-tost.jpg",
   },
 
   {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
-    thumbnail: "/recenzije/rec2.png",
+    title: "Sremački Trio",
+    link: "/meni/slane/7",
+    thumbnail: "/meni/sremacki-trio.jpg",
   },
   {
-    title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
-    thumbnail: "/recenzije/rec3.png",
+    title: "kulen",
+    link: "/meni/slane/3",
+    thumbnail: "/meni/kulen.jpg",
   },
   {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
-    thumbnail: "/recenzije/rec4.png",
+    title: "Pečenica",
+    link: "/meni/slane/1",
+    thumbnail: "/meni/pecenica.jpg",
   },
   {
-    title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
-    thumbnail: "/recenzije/rec5.png",
+    title: "Duo Miks",
+    link: "/meni/slane/4",
+    thumbnail: "/meni/duo-mix.jpg",
+  },
+  {
+    title: "Prazna Proteinska",
+    link: "/meni/proteinske/25",
+    thumbnail: "/meni/prot-prazna.jpg",
+  },
+  {
+    title: "Lešnik Puter",
+    link: "/meni/proteinske/27",
+    thumbnail: "/meni/prot-lesnik-puter.jpg",
+  },
+  {
+    title: "Krem od Pistaća",
+    link: "/meni/proteinske/24",
+    thumbnail: "/meni/prot-pistaci.jpg",
+  },
+
+  {
+    title: "Kikiriki Puter",
+    link: "/meni/proteinske/26",
+    thumbnail: "/meni/prot-kikiriki-puter.jpg",
+  },
+
+  {
+    title: "Kikiriki Puterom i Džem",
+    link: "/meni/proteinske/23",
+    thumbnail: "/meni/prot-kikiriki-puter-dz.jpg",
   },
 ];
 
@@ -885,9 +886,7 @@ export const floatingLinks = [
 export const sidebarSocialIcons = [
   {
     href: "tel:+381645574037",
-    icon: (
-      <FaPhoneVolume className='text-lg hover:scale-125 transition  duration-300 ease-in-out ' />
-    ),
+    icon: <FaPhoneVolume className='text-lg' />,
   },
   {
     href: "https://www.alideda.rs/mister-pacalinkovic-dostava-sremska-mitrovica",
@@ -897,7 +896,6 @@ export const sidebarSocialIcons = [
         width={20}
         height={20}
         alt='Alideda Logo'
-        className='hover:scale-125 transition  duration-300 ease-in-out'
       />
     ),
   },
@@ -909,26 +907,20 @@ export const sidebarSocialIcons = [
         width={20}
         height={20}
         alt='Wolt Logo'
-        className='font-lg hover:scale-125 transition  duration-300 ease-in-out '
+        className='font-lg '
       />
     ),
   },
   {
     href: "https://www.facebook.com/p/Palacinkarnica-Mister-Pacalinkovic-100068327874172/",
-    icon: (
-      <MdFacebook className='text-xl hover:scale-125 transition  duration-300 ease-in-out ' />
-    ),
+    icon: <MdFacebook className='text-xl ' />,
   },
   {
     href: "https://www.instagram.com/p/BfyUoFtAwog/",
-    icon: (
-      <AiFillInstagram className='text-xl hover:scale-125 transition  duration-300 ease-in-out ' />
-    ),
+    icon: <AiFillInstagram className='text-xl' />,
   },
   {
     href: "https://www.google.com/maps/place/Mister+Pa%C4%8Dalinkovi%C4%87/@44.9669718,19.6094189,15z/data=!4m6!3m5!1s0x475ba53e94ecba47:0x86dc485657b2d93f!8m2!3d44.9669718!4d19.6094189!16s%2Fg%2F11tfb7l9lj?entry=ttu",
-    icon: (
-      <FaLocationDot className='text-lg hover:scale-125 transition  duration-300 ease-in-out ' />
-    ),
+    icon: <FaLocationDot className='text-lg ' />,
   },
 ];

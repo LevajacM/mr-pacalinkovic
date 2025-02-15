@@ -16,7 +16,8 @@ const MeniPage = () => {
       <Naslov
         tekst='Naš Meni'
         trajanje={2.6}
-        klase='text-3xl sm:text-4xl lg:text-5xl text-orange-600'
+        klase='text-3xl sm:text-4xl lg:text-5xl '
+        textColor='text-emerald-900'
       />
       <Filteri />
       <Grid>

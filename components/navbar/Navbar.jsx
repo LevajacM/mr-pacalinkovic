@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Container from "../global/Container";
 import Logo from "./Logo";
 import MeniLinkovi from "./MeniLinkovi";
@@ -10,10 +11,15 @@ import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const path = usePathname();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  useEffect(() => {
+    setIsSidebarOpen(false);
+  }, [path]);
 
   return (
     <nav className='border-b'>

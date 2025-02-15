@@ -9,7 +9,8 @@ const KontaktPage = () => {
       <Naslov
         tekst='kontakt'
         trajanje={1.6}
-        klase='text-3xl sm:text-4xl lg:text-5xl text-orange-600'
+        klase='text-3xl sm:text-4xl lg:text-5xl'
+        textColor='text-emerald-900'
       />
       <div className='w-full h-auto  grid gap-x-10 gap-y-10 md:grid-cols-2 items-center my-16'>
         <div className='w-full grid items-center justify-center overflow-hidden rounded-2xl '>
@@ -18,7 +19,7 @@ const KontaktPage = () => {
             // width='600'
             height='450'
             // style='border:0;'
-            className='w-[90vw] md:w-[45vw] lg:w-[31vw] border border-primary rounded-lg'
+            className='w-[90vw] md:w-[45vw] lg:w-[31vw] border border-emerald-700 rounded-lg'
             // allowFullScreen
             referrerPolicy='no-referrer-when-downgrade'
           ></iframe>
@@ -27,7 +28,8 @@ const KontaktPage = () => {
           <Podnaslov
             tekst='Radno Vreme'
             trajanje={2}
-            klase='text-lg sm:text-xl lg:text-2xl  text-primary font-bold text-orange-600'
+            klase='text-lg sm:text-xl lg:text-2xl  text-primary font-bold'
+            textColor='text-emerald-800'
           />
           <ul className='list-none pb-2 w-[300px] mx-auto'>
             {radnoVr.map((item, i) => {
@@ -38,6 +40,7 @@ const KontaktPage = () => {
                     tekst={item.dan}
                     trajanje={2 + delay}
                     klase='text-sm md:text-base lg:text-lg'
+                    textColor='text-emerald-700'
                   />
 
                   <span>
@@ -45,6 +48,7 @@ const KontaktPage = () => {
                       tekst={item.sat}
                       trajanje={2 + delay}
                       klase='text-sm md:text-base lg:text-lg text-primary'
+                      textColor='text-emerald-500'
                     />
                   </span>
                 </li>
@@ -55,15 +59,17 @@ const KontaktPage = () => {
             tekst='Kontakt Telefon'
             trajanje={3.5}
             klase='text-lg sm:text-xl lg:text-2xl  text-primary font-bold text-orange-600'
+            textColor='text-emerald-800'
           />
           <a
             href='tel:+381645574037'
-            className='hover:underline hover:text-primary duration-300'
+            className='hover:underline hover:text-emerald-500 duration-300'
           >
             <Podnaslov
               tekst='064/5574037'
               trajanje={4}
               klase='text-lg sm:text-xl lg:text-2xl pb-2 text-primary font-bold'
+              textColor='text-emerald-500'
             />
           </a>
         </div>

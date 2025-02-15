@@ -11,7 +11,7 @@ const Filteri = () => {
         <Button
           variant='default'
           size='default'
-          className='bg-primary capitalize'
+          className='bg-emerald-700 capitalize'
         >
           Sve
         </Button>
@@ -22,7 +22,7 @@ const Filteri = () => {
             <Button
               variant='default'
               size='default'
-              className='bg-primary capitalize'
+              className='bg-emerald-700 capitalize'
             >
               {item}
             </Button>
