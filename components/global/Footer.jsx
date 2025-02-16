@@ -3,7 +3,7 @@ import { FloatingDockElement } from "./FloatingDock";
 const Footer = () => {
   return (
     <>
-      <div className=' w-full h-[52vh]  grid items-end justify-center'>
+      <div className=' w-full h-[72vh] sm:h-[54vh]  grid items-end justify-center'>
         <FloatingDockElement />
       </div>
       <div className='w-full text-center text-emerald-900'>

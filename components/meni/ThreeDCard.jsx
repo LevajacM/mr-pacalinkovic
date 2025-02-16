@@ -30,6 +30,7 @@ export function ThreeDCard({ naziv, slika, cena, desc }) {
             width='500'
             className='h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl'
             alt='thumbnail'
+            unoptimized
           />
         </CardItem>
         <div className='flex justify-between items-center mt-4 h-20'>

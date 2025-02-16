@@ -37,17 +37,17 @@ export async function generateStaticParams() {
     { category: "proteinske", id: "26" },
     { category: "proteinske", id: "27" },
 
-    { category: "sendvici", id: "28" },
-    { category: "sendvici", id: "29" },
+    { category: "sendviči", id: "28" },
+    { category: "sendviči", id: "29" },
 
-    { category: "pice", id: "30" },
-    { category: "pice", id: "31" },
-    { category: "pice", id: "32" },
-    { category: "pice", id: "33" },
-    { category: "pice", id: "34" },
-    { category: "pice", id: "35" },
-    { category: "pice", id: "36" },
-    { category: "pice", id: "37" },
+    { category: "piće", id: "30" },
+    { category: "piće", id: "31" },
+    { category: "piće", id: "32" },
+    { category: "piće", id: "33" },
+    { category: "piće", id: "34" },
+    { category: "piće", id: "35" },
+    { category: "piće", id: "36" },
+    { category: "piće", id: "37" },
   ];
 }
 
@@ -69,7 +69,7 @@ const SingleProductPage = async ({ params }) => {
       <div className='hidden md:flex w-full h-auto px-3 md:px-6'>
         <Breadcrumbs title={title} category={category} />
       </div>
-      <div className='w-full h-[100vh] md:h-[50vh] grid md:grid-cols-2 gap-12 pt-20 md:pt-4 px-3 md:px-6'>
+      <div className='w-full h-[120vh] sm:h-[100vh] md:h-[50vh] grid md:grid-cols-2 gap-12 pt-20 md:pt-4 px-3 md:px-6'>
         <div className='relative w-full h-full'>
           <Image
             src={img}
@@ -77,7 +77,15 @@ const SingleProductPage = async ({ params }) => {
             fill
             priority
             className='h-[30vh] md:h-[50vh]  object-cover rounded-2xl'
+            unoptimized
           />
+          {/* <img
+            src={img}
+            alt={title}
+            fill
+            priority
+            className='h-[30vh] md:h-[50vh]  object-cover rounded-2xl'
+          /> */}
           <span className='absolute top-3 right-3 rounded-full h-16 grid items-center justify-center font-bold bg-emerald-600 text-emerald-50 px-[7px]'>
             {price}din
           </span>

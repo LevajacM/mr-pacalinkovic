@@ -807,7 +807,13 @@ export const floatingLinks = [
   {
     title: "Alideda",
     icon: (
-      <Image
+      // <Image
+      //   src='/logo/alideda-emb.png'
+      //   width={20}
+      //   height={20}
+      //   alt='Alideda Logo'
+      // />
+      <img
         src='/logo/alideda-emb.png'
         width={20}
         height={20}
@@ -819,7 +825,14 @@ export const floatingLinks = [
   {
     title: "Wolt",
     icon: (
-      <Image
+      // <Image
+      //   src='/logo/wolt-logo.png'
+      //   width={20}
+      //   height={20}
+      //   alt='Wolt Logo'
+      //   className='font-lg'
+      // />
+      <img
         src='/logo/wolt-logo.png'
         width={20}
         height={20}
@@ -832,7 +845,14 @@ export const floatingLinks = [
   {
     title: "Facebook",
     icon: (
-      <Image
+      // <Image
+      //   src='/logo/brand-facebook.svg'
+      //   width={30}
+      //   height={30}
+      //   alt='Facebook Logo'
+      //   className='font-lg'
+      // />
+      <img
         src='/logo/brand-facebook.svg'
         width={30}
         height={30}
@@ -845,7 +865,14 @@ export const floatingLinks = [
   {
     title: "Instagram",
     icon: (
-      <Image
+      // <Image
+      //   src='/logo/brand-instagram.svg'
+      //   width={20}
+      //   height={20}
+      //   alt='Instagram Logo'
+      //   className='font-lg'
+      // />
+      <img
         src='/logo/brand-instagram.svg'
         width={20}
         height={20}
@@ -858,7 +885,14 @@ export const floatingLinks = [
   {
     title: "Google Mape",
     icon: (
-      <Image
+      // <Image
+      //   src='/logo/map-pin.svg'
+      //   width={20}
+      //   height={20}
+      //   alt='Google Mape'
+      //   className='font-lg'
+      // />
+      <img
         src='/logo/map-pin.svg'
         width={20}
         height={20}
@@ -871,7 +905,14 @@ export const floatingLinks = [
   {
     title: "Poziv",
     icon: (
-      <Image
+      // <Image
+      //   src='/logo/phone-call.svg'
+      //   width={20}
+      //   height={20}
+      //   alt='Telefon'
+      //   className='font-lg'
+      // />
+      <img
         src='/logo/phone-call.svg'
         width={20}
         height={20}
@@ -891,7 +932,13 @@ export const sidebarSocialIcons = [
   {
     href: "https://www.alideda.rs/mister-pacalinkovic-dostava-sremska-mitrovica",
     icon: (
-      <Image
+      // <Image
+      //   src='/logo/alideda-emb.png'
+      //   width={20}
+      //   height={20}
+      //   alt='Alideda Logo'
+      // />
+      <img
         src='/logo/alideda-emb.png'
         width={20}
         height={20}
@@ -902,7 +949,14 @@ export const sidebarSocialIcons = [
   {
     href: "https://wolt.com/sr/srb/sremska-mitrovica/restaurant/mister-paalinkovi",
     icon: (
-      <Image
+      // <Image
+      //   src='/logo/wolt-logo.png'
+      //   width={20}
+      //   height={20}
+      //   alt='Wolt Logo'
+      //   className='font-lg '
+      // />
+      <img
         src='/logo/wolt-logo.png'
         width={20}
         height={20}

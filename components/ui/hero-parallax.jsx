@@ -130,7 +130,14 @@ export const ProductCard = ({ product, translate }) => {
         href={product.link}
         className='block group-hover/product:shadow-2xl '
       >
-        <Image
+        {/* <Image
+          src={product.thumbnail}
+          height='300'
+          width='300'
+          className='object-cover object-center  absolute h-full w-full inset-0 rounded-xl'
+          alt={product.title}
+        /> */}
+        <img
           src={product.thumbnail}
           height='300'
           width='300'
