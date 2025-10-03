@@ -1,17 +1,53 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import Container from "../global/Container";
-import Logo from "./Logo";
-import MeniLinkovi from "./MeniLinkovi";
-import SocialIkone from "./SocialIkone";
-import ToggleBtn from "./ToggleBtn";
-import Sidebar from "./Sidebar";
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import Container from '../global/Container';
+import Logo from './Logo';
+import MeniLinkovi from './MeniLinkovi';
+import SocialIkone from './SocialIkone';
+import ToggleBtn from './ToggleBtn';
+import Sidebar from './Sidebar';
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from 'motion/react';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+
+  const [visible, setVisible] = useState(true);
+
   const path = usePathname();
+
+  const menuPage = path === '/meni';
+
+  useMotionValueEvent(scrollYProgress, 'change', (current) => {
+    if (typeof current === 'number') {
+      let direction = current - scrollYProgress.getPrevious();
+
+      if (!menuPage) {
+        if (scrollYProgress.get() > 0.28 && direction > 0) {
+          setVisible(false);
+        } else {
+          if (direction < 0) {
+            setVisible(true);
+          }
+        }
+      } else {
+        if (scrollYProgress.get() > 0.02 && direction > 0) {
+          setVisible(false);
+        } else {
+          if (direction < 0) {
+            setVisible(true);
+          }
+        }
+      }
+    }
+  });
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -22,16 +58,31 @@ const Navbar = () => {
   }, [path]);
 
   return (
-    <nav className='border-b'>
-      <Container className='flex  sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4 py-5 px-5'>
-        <Logo />
-        <ToggleBtn toggle={toggleSidebar} />
+    <AnimatePresence mode='wait'>
+      <motion.nav
+        initial={{
+          opacity: 1,
+          y: 0,
+        }}
+        animate={{
+          y: visible ? 0 : -100,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+        className='bg-transparent fixed sm:top-4 left-0 w-full z-50 '
+      >
+        <Container className='flex  sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4 py-5 px-5 sm:w-[95%] mx-auto sm:rounded-sm bg-white sm:hover:scale-105 transition-all duration-700 shadow-md shadow-white sm:hover:shadow-lg sm:hover:shadow-yellow-500'>
+          <Logo />
+          <ToggleBtn toggle={toggleSidebar} />
 
-        <MeniLinkovi />
-        <SocialIkone />
-        {isSidebarOpen && <Sidebar />}
-      </Container>
-    </nav>
+          <MeniLinkovi />
+          <SocialIkone />
+          {isSidebarOpen && <Sidebar />}
+        </Container>
+      </motion.nav>
+    </AnimatePresence>
   );
 };
 
