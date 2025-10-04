@@ -73,7 +73,7 @@ const Navbar = () => {
         }}
         className='bg-transparent fixed sm:top-4 left-0 w-full z-50 '
       >
-        <Container className='flex  sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4 py-5 px-5 sm:w-[95%] mx-auto sm:rounded-sm bg-white sm:hover:scale-105 transition-all duration-700 shadow-md shadow-white sm:hover:shadow-lg sm:hover:shadow-yellow-500'>
+        <Container className='flex  sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4 py-5 px-5 sm:w-[95%] mx-auto sm:rounded-sm bg-gradient-to-br from-primary to-accent opacity-80 sm:hover:scale-105 transition-all duration-700 shadow-lg shadow-white sm:hover:shadow-xl sm:hover:shadow-white hover:opacity-100'>
           <Logo />
           <ToggleBtn toggle={toggleSidebar} />
 

@@ -1,9 +1,5 @@
 import { meni } from '@/utils/links';
 
-export const getButtonCategory = [
-  ...new Set(meni.map((item) => item.category)),
-];
-
 export const getAll = () => {
   return meni;
 };
@@ -33,4 +29,18 @@ export const getSingleProt = (category) => {
 export const getSingleProduct = (id) => {
   const artikal = meni.find((item) => item.id === id);
   return artikal;
+};
+
+export const getProductsBySearch = (searchWord) => {
+  if (searchWord) {
+    const filteredItems = meni.filter((item) => {
+      return (
+        item.title.toLowerCase().includes(searchWord.toLowerCase()) ||
+        item.desc.join(' ').toLowerCase().includes(searchWord.toLowerCase())
+      );
+    });
+    return filteredItems;
+  } else {
+    return [];
+  }
 };

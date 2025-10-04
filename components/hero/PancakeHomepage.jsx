@@ -70,7 +70,7 @@ const PancakeHomepage = () => {
 
         <div className='relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in'>
           <h1 className='text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl'>
-            Mr. Pačalinković 🧡🥞🧡
+            Mr. Pačalinković 🥞🧡
           </h1>
           <p className='text-xl md:text-2xl mb-8 text-white/95 drop-shadow-lg'>
             Najukusnije palačinke u gradu! Svaka palačinka je naša ljubav.

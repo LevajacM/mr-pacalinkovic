@@ -9,7 +9,7 @@ export function ThreeDCard({ naziv, slika, cena, desc, cardHoverShadow }) {
   return (
     <CardContainer className='inter-var'>
       <CardBody
-        className={`bg-gradient-to-br from-primary to-accent relative group/card  hover:shadow-xl    border-orange-900/[0.1]  w-[300px]  sm:w-[21rem] h-auto rounded-xl px-6 pt-6 pb-3 border ${
+        className={`bg-gradient-to-br from-orange-600 to-accent relative group/card  hover:shadow-2xl   opacity-80 hover:opacity-100 border-orange-900/[0.1]  w-[300px]  sm:w-[21rem] h-auto rounded-xl px-6 pt-6 pb-3 border ${
           cardHoverShadow || ''
         }`}
       >
