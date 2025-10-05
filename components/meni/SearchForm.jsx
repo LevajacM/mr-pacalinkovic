@@ -54,7 +54,7 @@ export default function SearchForm() {
       />
       <button
         type='submit'
-        className=' h-full w-6 absolute top-0 right-4 px-8 flex items-center justify-center bg-orange-400 rounded-tr-lg rounded-br-lg opacity-80 text-white cursor-pointer border-2 border-gray-400'
+        className=' h-full w-6 absolute top-0 right-0 sm:right-4 px-8 flex items-center justify-center bg-orange-400 rounded-tr-lg rounded-br-lg opacity-80 text-white cursor-pointer border-2 border-gray-400'
       >
         <SearchIconComponent />
       </button>
