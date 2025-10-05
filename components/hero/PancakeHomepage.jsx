@@ -49,7 +49,8 @@ const PancakeHomepage = () => {
 
   return (
     <div className='min-h-screen bg-background'>
-      {/* hero palacinka section */}
+      {/* Hero sekcija sa palacinkom */}
+
       <section className='relative h-[100vh]  flex items-center justify-center overflow-visible'>
         <div
           className='absolute inset-0 bg-cover bg-center'
@@ -112,7 +113,8 @@ const PancakeHomepage = () => {
         </div>
       </section>
 
-      {/* Hero Section */}
+      {/* Hero Sekcija 2 */}
+
       <header className='relative overflow-hidden bg-gradient-to-br from-primary via-accent to-primary-glow text-primary-foreground'>
         <div className='absolute inset-0  opacity-20' />
         <div className='container relative mx-auto px-4 py-24 md:py-32'>
@@ -151,7 +153,8 @@ const PancakeHomepage = () => {
         <div className='absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent' />
       </header>
 
-      {/* Menu Section */}
+      {/* Meni sekcija */}
+
       <section className='container mx-auto px-4 pt-20 pb-12'>
         <div className='mb-4 text-center'>
           <h2 className='mb-4 text-4xl md:text-5xl font-bold text-orange-400'>
@@ -172,7 +175,6 @@ const PancakeHomepage = () => {
                   slika={artikal1.img}
                   cena={artikal1.price}
                   desc={artikal1.desc}
-                  // cardHoverShadow='hover:shadow-orange-400'
                 />
               </Link>
               <Link href={`/${artikal2.id}`}>
@@ -181,7 +183,6 @@ const PancakeHomepage = () => {
                   slika={artikal2.img}
                   cena={artikal2.price}
                   desc={artikal2.desc}
-                  // cardHoverShadow='hover:shadow-orange-400'
                 />
               </Link>
               <Link href={`/${artikal3.id}`}>
@@ -190,7 +191,6 @@ const PancakeHomepage = () => {
                   slika={artikal3.img}
                   cena={artikal3.price}
                   desc={artikal3.desc}
-                  // cardHoverShadow='hover:shadow-orange-400'
                 />
               </Link>
             </Grid>
@@ -203,7 +203,6 @@ const PancakeHomepage = () => {
                 slika={artikal1.img}
                 cena={artikal1.price}
                 desc={artikal1.desc}
-                // cardHoverShadow='hover:shadow-orange-400'
               />
             </Link>
             <Link href={`/${artikal2.id}`}>
@@ -212,7 +211,6 @@ const PancakeHomepage = () => {
                 slika={artikal2.img}
                 cena={artikal2.price}
                 desc={artikal2.desc}
-                // cardHoverShadow='hover:shadow-orange-400'
               />
             </Link>
             <Link href={`/${artikal3.id}`}>
@@ -221,14 +219,14 @@ const PancakeHomepage = () => {
                 slika={artikal3.img}
                 cena={artikal3.price}
                 desc={artikal3.desc}
-                // cardHoverShadow='hover:shadow-orange-400'
               />
             </Link>
           </Grid>
         )}
       </section>
 
-      {/* Features Section */}
+      {/* Features Sekcija */}
+
       <section className='bg-secondary/50 py-20'>
         <div className='container mx-auto px-4'>
           <div className='grid gap-10 md:grid-cols-2 lg:grid-cols-4'>
@@ -283,7 +281,8 @@ const PancakeHomepage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Sekcija */}
+
       <section className='container mx-auto px-4 py-20'>
         <div className='rounded-3xl bg-gradient-to-br from-primary via-accent to-primary-glow p-4 sm:p-12 md:p-16 text-center text-primary-foreground shadow-elegant relative overflow-hidden'>
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yIDItNCAyLTRzMiAyIDIgNHYxMmMwIDItMiA0LTIgNHMtMi0yLTItNHYtMTJ6bS0yMCAwYzAtMiAyLTQgMi00czIgMiAyIDR2MTJjMCAyLTIgNC0yIDRzLTItMi0yLTR2LTEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />

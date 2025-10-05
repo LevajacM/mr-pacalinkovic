@@ -2,10 +2,6 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 
 const MenuFooter = () => {
-  const handleCall = () => {
-    window.location.href = 'tel:+381645574037';
-  };
-
   return (
     <section className='container mx-auto px-4 py-20'>
       <div className='rounded-3xl bg-gradient-to-br from-primary via-accent to-primary-glow p-12 md:p-16 text-center text-primary-foreground shadow-elegant relative overflow-hidden'>
@@ -21,7 +17,6 @@ const MenuFooter = () => {
           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
             <Link href='/kontakt'>
               <Button
-                // onClick={handleCall}
                 size='lg'
                 className='bg-card text-primary hover:bg-transparent hover:shadow-gray-100 hover:shadow-xl hover:text-white shadow-lg text-lg px-8 py-[25.5px] transition-all duration-500 hover:scale-110'
               >

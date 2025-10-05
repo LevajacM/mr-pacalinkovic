@@ -1,49 +1,5 @@
 'use client';
 
-// import { useState, useEffect } from 'react';
-// import Link from 'next/link';
-// import {
-//   motion,
-//   AnimatePresence,
-//   useScroll,
-//   useMotionValueEvent,
-// } from 'motion/react';
-
-// const BackToMenuBtn = () => {
-//   const [visible, setVisible] = useState(false);
-//   const { scrollYProgress } = useScroll();
-
-//   useEffect(() => {
-//     let mounted = true;
-
-//     useMotionValueEvent(scrollYProgress, 'change', (current) => {
-//       if (!mounted) return;
-//       setVisible(current > 0.7);
-//     });
-
-//     return () => {
-//       mounted = false;
-//     };
-//   }, [scrollYProgress]);
-
-//   if (!visible) {
-//     return null;
-//   }
-
-//   return (
-//     <Link
-//       href='/meni'
-//       className='fixed bottom-4 right-4 md:bottom-10 md:right-12 z-100000'
-//     >
-//       <button className='px-4 py-2 bg-orange-400 rounded-full font-bold text-white animate-pulse '>
-//         Nazad na meni
-//       </button>
-//     </Link>
-//   );
-// };
-
-// export default BackToMenuBtn;
-
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useScroll } from 'motion/react';

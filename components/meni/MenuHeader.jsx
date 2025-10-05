@@ -48,7 +48,8 @@ const MenuHeader = () => {
 
   return (
     <div className='min-h-[85vh] bg-background'>
-      {/* Hero Section */}
+      {/* Hero Sekcija */}
+
       <section className='relative h-[65vh] flex items-center justify-center overflow-hidden'>
         <div
           className='absolute inset-0 bg-cover bg-center'
@@ -67,7 +68,8 @@ const MenuHeader = () => {
         </div>
       </section>
 
-      {/* Search Section */}
+      {/* Search Sekcija */}
+
       <section className='container mx-auto px-4 -mt-4 relative z-20'>
         <div
           id='smooth-scroll'
@@ -82,6 +84,7 @@ const MenuHeader = () => {
       </section>
 
       {/* Category Buttons */}
+
       <section className='container mx-auto px-4 py-12'>
         <div className='w-full'>
           <div className='grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2  h-auto p-2 bg-secondary rounded-md'>

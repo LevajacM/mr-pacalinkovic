@@ -3,6 +3,7 @@ import { getAll, getByCategory } from '@/utils/actions';
 import Grid from '@/components/meni/Grid';
 import { ThreeDCard } from '@/components/meni/ThreeDCard';
 import Naslov from '@/components/global/Naslov';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return [
@@ -31,9 +32,21 @@ const CategoryPage = async ({ params }) => {
 
   if (category === 'Sve Palačinke') {
     artikli = getAll();
-  } else {
+  }
+  if (
+    category === 'slatke' ||
+    category === 'slane' ||
+    category === 'proteinske' ||
+    category === 'sendviči' ||
+    category === 'piće'
+  ) {
     artikli = getByCategory(category);
   }
+
+  if (!artikli) {
+    notFound();
+  }
+
   return (
     <>
       <Naslov

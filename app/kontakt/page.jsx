@@ -16,11 +16,12 @@ const KontaktPage = () => {
 
   return (
     <div className='min-h-screen bg-gradient-to-b from-background to-secondary'>
-      {/* Hero Section */}
+      {/* Hero Sekcija */}
+
       <section className='relative h-[100vh]  flex items-center justify-center overflow-hidden'>
         <div
           className='absolute inset-0 bg-cover bg-center'
-          style={{ backgroundImage: `url('/palacinke-hero.jpeg')` }}
+          style={{ backgroundImage: `url('/palacinke-hero2.jpeg')` }}
         >
           <div className='absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/50 to-background'></div>
         </div>
@@ -42,7 +43,8 @@ const KontaktPage = () => {
         </div>
       </section>
 
-      {/* Contact Cards Section */}
+      {/* Contact Cards Sekcija */}
+
       <section className='py-16 px-4 max-w-7xl mx-auto'>
         <h2 className='text-4xl md:text-5xl font-bold text-center mb-12 text-gray-500'>
           Kontaktirajte Nas
@@ -103,7 +105,8 @@ const KontaktPage = () => {
           </Card>
         </div>
 
-        {/* Working Hours Section */}
+        {/* Radno vreme sekcija */}
+
         <div className='mb-16'>
           <Card className='max-w-2xl mx-auto bg-card border-border shadow-[var(--shadow-soft)]'>
             <CardContent className='pt-8'>
@@ -135,7 +138,8 @@ const KontaktPage = () => {
           </Card>
         </div>
 
-        {/* Map Section */}
+        {/* Map Sekcija */}
+
         <div className='mb-16'>
           <h3 className='text-3xl font-bold text-center mb-8 text-gray-600'>
             Kako Do Nas?
@@ -159,7 +163,8 @@ const KontaktPage = () => {
           </Card>
         </div>
 
-        {/* Social Media Section */}
+        {/* Social Media Sekcija */}
+
         <div className='text-center'>
           <h3 className='text-2xl font-bold mb-6 text-gray-600'>
             Zapratite Nas

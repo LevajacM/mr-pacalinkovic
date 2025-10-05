@@ -1,3 +1,11 @@
+import { notFound } from 'next/navigation';
+import { getSingleProduct } from '@/utils/actions';
+import { Star, Clock, Users, AlertCircle } from 'lucide-react';
+import CallBtn from '@/components/single-product/CallBtn';
+import BackToMenuBtn from '@/components/single-product/BackToMenuBtn';
+
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   return [
     { id: '1' },
@@ -40,16 +48,14 @@ export async function generateStaticParams() {
   ];
 }
 
-import Link from 'next/link';
-import { getSingleProduct } from '@/utils/actions';
-import { Star, Clock, Users, AlertCircle } from 'lucide-react';
-import CallBtn from '@/components/single-product/CallBtn';
-import BackToMenuBtn from '@/components/single-product/BackToMenuBtn';
-
 const SingleProductPage = async ({ params }) => {
   const { id } = await params;
 
   const artikal = getSingleProduct(parseInt(id));
+
+  if (!artikal) {
+    notFound();
+  }
 
   const { title, category, price, img, desc, dodaci, opis1, opis2 } = artikal;
 
@@ -73,7 +79,8 @@ const SingleProductPage = async ({ params }) => {
     <>
       <BackToMenuBtn />
       <div className='min-h-screen bg-gradient-to-br from-background via-background to-primary/5'>
-        {/* Hero Section */}
+        {/* Hero Sekcija */}
+
         <section className='relative h-[60vh] overflow-hidden'>
           <div className='absolute inset-0'>
             <img src={img} alt={title} className='w-full h-full object-cover' />
@@ -101,7 +108,8 @@ const SingleProductPage = async ({ params }) => {
           </div>
         </section>
 
-        {/* Main Content */}
+        {/* Sadrzaj */}
+
         <section className='container mx-auto px-4 py-16'>
           <div className='grid md:grid-cols-2 gap-8 max-w-6xl mx-auto'>
             {/* Product Info Cards */}
@@ -138,7 +146,8 @@ const SingleProductPage = async ({ params }) => {
                 </div>
               </div>
 
-              {/* Ingredients */}
+              {/* Sastojci */}
+
               <div className='bg-card rounded-2xl p-8 shadow-[var(--shadow-medium)] border border-border hover:shadow-[var(--shadow-large)] transition-all duration-300'>
                 <h2 className='text-2xl font-bold mb-6 text-gray-600'>
                   Osnovni sastojci
@@ -158,7 +167,8 @@ const SingleProductPage = async ({ params }) => {
                 </div>
               </div>
 
-              {/* Allergens */}
+              {/* Alergeni */}
+
               {id < 30 ? (
                 <div className='bg-destructive/10 border border-destructive/20 rounded-2xl p-6'>
                   <div className='flex items-start gap-3'>
@@ -204,7 +214,8 @@ const SingleProductPage = async ({ params }) => {
                 </div>
               ) : null}
 
-              {/* Description */}
+              {/* Opis */}
+
               <div className='bg-card rounded-2xl p-8 shadow-[var(--shadow-medium)] border border-border'>
                 <h2 className='text-2xl font-bold mb-4 text-gray-600'>Opis</h2>
                 <p className='text-muted-foreground leading-relaxed mb-4'>
@@ -214,6 +225,7 @@ const SingleProductPage = async ({ params }) => {
               </div>
 
               {/* Call to Action */}
+
               <div className='bg-gradient-to-br from-primary to-primary-glow rounded-2xl p-8 text-center shadow-[var(--shadow-large)]'>
                 <h3 className='text-2xl font-bold text-primary-foreground mb-3'>
                   Spremni za užitak?
