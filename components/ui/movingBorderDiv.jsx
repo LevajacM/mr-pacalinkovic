@@ -36,7 +36,7 @@ export function MovingBorderDiv({
         <MovingBorder duration={duration} rx='10%' ry='10%'>
           <div
             className={cn(
-              'h-[1600px] w-[1600px] bg-[radial-gradient(#f97316_40%,transparent_60%)] opacity-[0.8]',
+              'h-[1600px] w-[1600px] bg-[radial-gradient(#fdba74_40%,transparent_60%)] opacity-[0.8]',
               borderClassName
             )}
           />

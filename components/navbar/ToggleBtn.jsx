@@ -1,5 +1,5 @@
-import { HiMenu } from "react-icons/hi";
-import { Button } from "../ui/button";
+import { HiMenu } from 'react-icons/hi';
+import { Button } from '../ui/button';
 
 const ToggleBtn = ({ toggle }) => {
   return (
@@ -7,7 +7,7 @@ const ToggleBtn = ({ toggle }) => {
       asChild
       variant='secondary'
       size='icon'
-      className='cursor-pointer !bg-transparent hover:scale-[1.2] delay-200 hover:rotate-90 transition  duration-300 ease-in-out sm:hidden absolute top-8 right-6 text-emerald-900'
+      className='cursor-pointer !bg-transparent hover:scale-[1.2] delay-200 hover:rotate-90 transition duration-500 ease-in-out sm:hidden absolute top-8 right-6 text-white border-transparent'
       onClick={toggle}
     >
       <HiMenu />

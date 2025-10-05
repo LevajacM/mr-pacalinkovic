@@ -2,17 +2,14 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import {
   UtensilsCrossed,
   Dessert,
   Drumstick,
   BicepsFlexed,
-  Sandwich,
-  CupSoda,
 } from 'lucide-react';
-import Form from 'next/form';
 import Link from 'next/link';
+import SearchForm from './SearchForm';
 
 const MenuHeader = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -26,10 +23,14 @@ const MenuHeader = () => {
     { id: 'pice', name: 'piće', icon: BicepsFlexed },
   ];
 
-  const smoothScrollDown = (distance, duration) => {
+  const smoothScrollDown = (duration = 400) => {
+    const element = document.getElementById('smooth-scroll');
+    if (!element) return;
+
     const start = window.scrollY;
-    const end = start + distance;
-    const step = (end - start) / (duration / 16); // otprilike 60 FPS
+    const end = element.getBoundingClientRect().top + window.scrollY;
+    const distance = end - start;
+    const step = distance / (duration / 16); // otprilike 60 FPS
     let current = start;
 
     const scroll = () => {
@@ -37,6 +38,8 @@ const MenuHeader = () => {
       window.scrollTo(0, current);
       if ((step > 0 && current < end) || (step < 0 && current > end)) {
         requestAnimationFrame(scroll);
+      } else {
+        window.scrollTo(0, end);
       }
     };
 
@@ -72,17 +75,7 @@ const MenuHeader = () => {
         >
           <div className='flex flex-col md:flex-row gap-4 items-center'>
             <div className='relative flex-1 w-full'>
-              <Form
-                action='/meni/search'
-                className='w-full sm:w-auto sm:flex-1 sm:mx-4  sm:mt-0'
-              >
-                <Input
-                  type='text'
-                  name='query'
-                  placeholder='🔍  Pretražite palačinke...'
-                  className='pl-5 h-12 text-base border-2 focus:border-primary'
-                />
-              </Form>
+              <SearchForm />
             </div>
           </div>
         </div>
@@ -102,15 +95,12 @@ const MenuHeader = () => {
                     key={category.id}
                     onClick={() => {
                       setSelectedCategory(category.id);
-                      // document
-                      //   .getElementById('smooth-scroll')
-                      //   ?.scrollIntoView({ behavior: 'smooth' });
-                      smoothScrollDown(window.innerHeight * 0.5, 300);
+                      smoothScrollDown();
                     }}
                     className={`flex items-center gap-2 py-3 text-base h-auto transition-all overflow-hidden w-full ${
                       isActive
-                        ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-                        : 'bg-transparent text-foreground hover:bg-background/50'
+                        ? 'bg-orange-400 text-primary-foreground hover:bg-primary/90 transition-colors duration-500'
+                        : 'bg-transparent text-gray-600 hover:bg-background/50 hover:text-gray-400 transition-colors duration-500'
                     }`}
                     variant={isActive ? 'default' : 'ghost'}
                   >

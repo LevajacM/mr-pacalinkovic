@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const MeniLinkovi = () => {
   return (
-    <ul className='hidden sm:flex flex-row items-center justify-between gap-6 lg:gap-12 text-lg font-bold lg:text-2xl text-white '>
+    <ul className='hidden sm:flex flex-row items-center justify-between gap-6 lg:gap-12 text-lg font-bold sm:text-base lg:text-xl text-white '>
       {links.map((link) => {
         return (
           <li key={link.label}>

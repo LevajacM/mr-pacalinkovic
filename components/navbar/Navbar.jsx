@@ -17,34 +17,25 @@ import {
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const { scrollYProgress } = useScroll();
-
   const [visible, setVisible] = useState(true);
+
+  const { scrollY } = useScroll();
 
   const path = usePathname();
 
   const menuPage = path === '/meni';
 
-  useMotionValueEvent(scrollYProgress, 'change', (current) => {
+  useMotionValueEvent(scrollY, 'change', (current) => {
     if (typeof current === 'number') {
-      let direction = current - scrollYProgress.getPrevious();
+      let direction = current - scrollY.getPrevious();
 
-      if (!menuPage) {
-        if (scrollYProgress.get() > 0.28 && direction > 0) {
-          setVisible(false);
-        } else {
-          if (direction < 0) {
-            setVisible(true);
-          }
-        }
-      } else {
-        if (scrollYProgress.get() > 0.02 && direction > 0) {
-          setVisible(false);
-        } else {
-          if (direction < 0) {
-            setVisible(true);
-          }
-        }
+      // prag u pikselima
+      const prag = 200;
+
+      if (current > prag && direction > 0) {
+        setVisible(false);
+      } else if (direction < 0) {
+        setVisible(true);
       }
     }
   });

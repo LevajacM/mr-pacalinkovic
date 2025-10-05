@@ -4,15 +4,16 @@ import Grid from '@/components/meni/Grid';
 import { ThreeDCard } from '@/components/meni/ThreeDCard';
 import Naslov from '@/components/global/Naslov';
 
-// export async function generateStaticParams() {
-//   return [
-//     { category: "slane" },
-//     { category: "slatke" },
-//     { category: "proteinske" },
-//     { category: "sendvici" },
-//     { category: "pice" },
-//   ];
-// }
+export async function generateStaticParams() {
+  return [
+    { category: 'Sve%20palačinke' },
+    { category: 'slane' },
+    { category: 'slatke' },
+    { category: 'proteinske' },
+    { category: 'sendviči' },
+    { category: 'piće' },
+  ];
+}
 
 const CategoryPage = async ({ params }) => {
   let { category } = await params;
@@ -41,10 +42,10 @@ const CategoryPage = async ({ params }) => {
         klase='text-3xl sm:text-43xl lg:text-5xl'
       />
 
-      <Grid>
+      <Grid klase='2xl:grid-cols-4'>
         {artikli.map((item) => {
           return (
-            <Link href={`/${item.title}`} key={item.id}>
+            <Link href={`/${item.id}`} key={item.id}>
               <ThreeDCard
                 naziv={item.title}
                 slika={item.img}

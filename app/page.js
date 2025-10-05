@@ -1,12 +1,9 @@
-import Footer from '@/components/global/Footer';
 import PancakeHomepage from '@/components/hero/PancakeHomepage';
 
 export default function Home() {
   return (
     <div>
       <PancakeHomepage />
-
-      <Footer />
     </div>
   );
 }

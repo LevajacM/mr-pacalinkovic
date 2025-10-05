@@ -2,25 +2,16 @@
 
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import {
-  ShoppingCart,
-  Clock,
-  Sparkles,
   Heart,
-  Star,
+  Trophy,
   Truck,
   ChefHat,
   Orbit,
   Phone,
+  Notebook,
 } from 'lucide-react';
 import Grid from '@/components/meni/Grid';
 import { ThreeDCard } from '@/components/meni/ThreeDCard';
@@ -28,7 +19,6 @@ import Image from 'next/image';
 import { getSingleByCategory, getSingleProt } from '@/utils/actions';
 import { MovingBorderDiv } from '../ui/movingBorderDiv';
 import useWindowDimensions from '@/lib/useWindowDimensions';
-import { PixelatedCanvasComponent } from './PixelatedCanvas';
 
 const PancakeHomepage = () => {
   const [isClient, setIsClient] = useState(false);
@@ -72,14 +62,14 @@ const PancakeHomepage = () => {
           <h1 className='text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl'>
             Mr. Pačalinković 🥞🧡
           </h1>
-          <p className='text-xl md:text-2xl mb-8 text-white/95 drop-shadow-lg'>
+          <p className='text-xl md:text-2xl mb-8 text-gray-200  '>
             Najukusnije palačinke u gradu! Svaka palačinka je naša ljubav.
           </p>
           {/* Buttons za porucivanje */}
           <div className='flex flex-col sm:flex-row gap-10'>
             <Button
               onClick={handleCall}
-              className='bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(255,165,0,0.4)] hover:shadow-[0_0_30px_rgba(255,165,0,0.6)] transition-all duration-300 text-lg px-8 py-6 rounded-full border-2 border-white hover:shadow-white font-bold'
+              className='bg-gradient-to-br from-primary to-accent hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(255,165,0,0.4)] hover:shadow-[0_0_30px_rgba(255,165,0,0.6)] transition-all duration-300 text-lg px-8 py-6 rounded-2xl border border-white hover:shadow-white font-bold'
             >
               <Phone className='mr-2 h-5 w-5' />
               Lično preuzimanje
@@ -90,7 +80,7 @@ const PancakeHomepage = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <Button className='bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(255,165,0,0.4)]  transition-all duration-300 text-lg px-8 py-6 rounded-full w-full border-2 border-white hover:shadow-white font-bold'>
+              <Button className='bg-gradient-to-br from-primary to-accent hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(255,165,0,0.4)]  transition-all duration-300 text-lg px-8 py-6 rounded-2xl w-full border border-white hover:shadow-white font-bold'>
                 <Image
                   src='/logo/alideda-emb.png'
                   width={20}
@@ -107,7 +97,7 @@ const PancakeHomepage = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <Button className='bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(255,165,0,0.4)]  transition-all duration-300 text-lg px-8 py-6 rounded-full w-full border-2 border-white hover:shadow-white font-bold'>
+              <Button className='bg-gradient-to-br from-primary to-accent hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(255,165,0,0.4)]  transition-all duration-300 text-lg px-8 py-6 rounded-2xl w-full border border-white hover:shadow-white font-bold'>
                 <Image
                   src='/logo/wolt-logo.png'
                   width={20}
@@ -127,8 +117,8 @@ const PancakeHomepage = () => {
         <div className='absolute inset-0  opacity-20' />
         <div className='container relative mx-auto px-4 py-24 md:py-32'>
           <div className='max-w-4xl mx-auto text-center'>
-            <Badge className='mb-6 bg-white/20 text-white border-white/30 hover:bg-white/30 backdrop-blur-sm text-base px-4 py-2'>
-              <Sparkles className='mr-2 h-4 w-4' />
+            <Badge className='mb-6 bg-gray-50 text-primary border-white/30 hover:bg-white hover:shadow-md hover:shadow-gray-50 transition-all duration-500 hover:text-orange-300 backdrop-blur-sm text-base px-4 py-2'>
+              <Trophy className='mr-2 h-4 w-4' />
               #1 Palačinke u Sremskoj Mitrovici
             </Badge>
             <h1 className='mb-6 text-5xl font-bold md:text-7xl tracking-tight animate-fade-in '>
@@ -164,7 +154,7 @@ const PancakeHomepage = () => {
       {/* Menu Section */}
       <section className='container mx-auto px-4 pt-20 pb-12'>
         <div className='mb-4 text-center'>
-          <h2 className='mb-4 text-4xl md:text-5xl font-bold text-primary'>
+          <h2 className='mb-4 text-4xl md:text-5xl font-bold text-orange-400'>
             Današnje Preporuke
           </h2>
           <p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
@@ -173,57 +163,67 @@ const PancakeHomepage = () => {
           </p>
         </div>
 
-        {/* <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>       
-        </div> */}
         {width >= 1280 ? (
           <MovingBorderDiv duration={5000}>
-            <Grid klase='bg-[#FFFBF5] rounded-lg  w-full h-full'>
+            <Grid klase='bg-[#FFFBF5] rounded-lg  w-full h-full 2xl:grid-cols-3!'>
+              <Link href={`/${artikal1.id}`}>
+                <ThreeDCard
+                  naziv={artikal1.title}
+                  slika={artikal1.img}
+                  cena={artikal1.price}
+                  desc={artikal1.desc}
+                  // cardHoverShadow='hover:shadow-orange-400'
+                />
+              </Link>
+              <Link href={`/${artikal2.id}`}>
+                <ThreeDCard
+                  naziv={artikal2.title}
+                  slika={artikal2.img}
+                  cena={artikal2.price}
+                  desc={artikal2.desc}
+                  // cardHoverShadow='hover:shadow-orange-400'
+                />
+              </Link>
+              <Link href={`/${artikal3.id}`}>
+                <ThreeDCard
+                  naziv={artikal3.title}
+                  slika={artikal3.img}
+                  cena={artikal3.price}
+                  desc={artikal3.desc}
+                  // cardHoverShadow='hover:shadow-orange-400'
+                />
+              </Link>
+            </Grid>
+          </MovingBorderDiv>
+        ) : (
+          <Grid>
+            <Link href={`/${artikal1.id}`}>
               <ThreeDCard
                 naziv={artikal1.title}
                 slika={artikal1.img}
                 cena={artikal1.price}
                 desc={artikal1.desc}
-                cardHoverShadow='hover:shadow-orange-400'
+                // cardHoverShadow='hover:shadow-orange-400'
               />
+            </Link>
+            <Link href={`/${artikal2.id}`}>
               <ThreeDCard
                 naziv={artikal2.title}
                 slika={artikal2.img}
                 cena={artikal2.price}
                 desc={artikal2.desc}
-                cardHoverShadow='hover:shadow-orange-400'
+                // cardHoverShadow='hover:shadow-orange-400'
               />
+            </Link>
+            <Link href={`/${artikal3.id}`}>
               <ThreeDCard
                 naziv={artikal3.title}
                 slika={artikal3.img}
                 cena={artikal3.price}
                 desc={artikal3.desc}
-                cardHoverShadow='hover:shadow-orange-400'
+                // cardHoverShadow='hover:shadow-orange-400'
               />
-            </Grid>
-          </MovingBorderDiv>
-        ) : (
-          <Grid>
-            <ThreeDCard
-              naziv={artikal1.title}
-              slika={artikal1.img}
-              cena={artikal1.price}
-              desc={artikal1.desc}
-              cardHoverShadow='hover:shadow-orange-400'
-            />
-            <ThreeDCard
-              naziv={artikal2.title}
-              slika={artikal2.img}
-              cena={artikal2.price}
-              desc={artikal2.desc}
-              cardHoverShadow='hover:shadow-orange-400'
-            />
-            <ThreeDCard
-              naziv={artikal3.title}
-              slika={artikal3.img}
-              cena={artikal3.price}
-              desc={artikal3.desc}
-              cardHoverShadow='hover:shadow-orange-400'
-            />
+            </Link>
           </Grid>
         )}
       </section>
@@ -236,7 +236,7 @@ const PancakeHomepage = () => {
               <div className='mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-elegant group-hover:scale-110 transition-transform duration-300'>
                 <Truck className='h-10 w-10' />
               </div>
-              <h3 className='mb-3 text-2xl font-bold text-foreground'>
+              <h3 className='mb-3 text-2xl font-bold text-gray-600'>
                 Brza Dostava
               </h3>
               <p className='text-muted-foreground text-lg leading-relaxed'>
@@ -248,7 +248,7 @@ const PancakeHomepage = () => {
               <div className='mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-elegant group-hover:scale-110 transition-transform duration-300'>
                 <ChefHat className='h-10 w-10' />
               </div>
-              <h3 className='mb-3 text-2xl font-bold text-foreground'>
+              <h3 className='mb-3 text-2xl font-bold text-gray-600'>
                 Sveži Sastojci
               </h3>
               <p className='text-muted-foreground text-lg leading-relaxed'>
@@ -260,7 +260,7 @@ const PancakeHomepage = () => {
               <div className='mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-elegant group-hover:scale-110 transition-transform duration-300'>
                 <Heart className='h-10 w-10' />
               </div>
-              <h3 className='mb-3 text-2xl font-bold text-foreground'>
+              <h3 className='mb-3 text-2xl font-bold text-gray-600'>
                 Sa Ljubavlju
               </h3>
               <p className='text-muted-foreground text-lg leading-relaxed'>
@@ -272,7 +272,7 @@ const PancakeHomepage = () => {
               <div className='mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-elegant group-hover:scale-110 transition-transform duration-300'>
                 <Orbit className='h-10 w-10' />
               </div>
-              <h3 className='mb-3 text-2xl font-bold text-foreground'>
+              <h3 className='mb-3 text-2xl font-bold text-gray-600'>
                 Svaki dan
               </h3>
               <p className='text-muted-foreground text-lg leading-relaxed'>
@@ -285,7 +285,7 @@ const PancakeHomepage = () => {
 
       {/* CTA Section */}
       <section className='container mx-auto px-4 py-20'>
-        <div className='rounded-3xl bg-gradient-to-br from-primary via-accent to-primary-glow p-12 md:p-16 text-center text-primary-foreground shadow-elegant relative overflow-hidden'>
+        <div className='rounded-3xl bg-gradient-to-br from-primary via-accent to-primary-glow p-4 sm:p-12 md:p-16 text-center text-primary-foreground shadow-elegant relative overflow-hidden'>
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yIDItNCAyLTRzMiAyIDIgNHYxMmMwIDItMiA0LTIgNHMtMi0yLTItNHYtMTJ6bS0yMCAwYzAtMiAyLTQgMi00czIgMiAyIDR2MTJjMCAyLTIgNC0yIDRzLTItMi0yLTR2LTEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
           <div className='relative'>
             <h2 className='mb-4 text-4xl md:text-5xl font-bold'>
@@ -296,57 +296,19 @@ const PancakeHomepage = () => {
               minuta!
             </p>
 
-            <PixelatedCanvasComponent />
+            <Link href='/meni'>
+              <Button
+                size='lg'
+                variant='outline'
+                className='bg-gray-50 text-orange-400  shadow-xl text-lg px-8 py-6 font-semibold shadow-white transition-all duration-500 hover:shadow-sm hover:shadow-white border-none hover:bg-white hover:text-primary'
+              >
+                <Notebook className='h-10 w-10' />
+                Pogledajte naš meni
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className='bg-card border-t border-border'>
-        <div className='container mx-auto px-4 py-12'>
-          <div className='grid gap-12 md:grid-cols-3'>
-            <div>
-              <h3 className='mb-4 text-2xl font-bold text-foreground flex items-center gap-2'>
-                <div className='h-10 w-10 rounded-full bg-gradient-to-br from-primary to-accent' />
-                Mr Pačalinković
-              </h3>
-              <p className='text-muted-foreground text-lg leading-relaxed'>
-                Najbolje palačinke u gradu, dostavljene direktno na vašu adresu
-                sa garantovanim kvalitetom.
-              </p>
-            </div>
-
-            <div>
-              <h3 className='mb-4 text-xl font-semibold text-foreground'>
-                Kontakt
-              </h3>
-              <div className='space-y-2 text-muted-foreground'>
-                <p className='text-lg'>📞 Telefon: 064/557-4037</p>
-
-                <p className='text-lg'>📍 Sremska Mitrovica, Srbija</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className='mb-4 text-xl font-semibold text-foreground'>
-                Radno Vreme
-              </h3>
-              <div className='space-y-2 text-muted-foreground'>
-                <p className='text-lg'>Ponedeljak - Nedelja</p>
-                <p className='text-2xl font-bold text-primary'>12:00 - 22:45</p>
-                <p className='text-sm'>Dostupni smo svakog dana!</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='mt-12 border-t border-border pt-8 text-center'>
-            <p className='text-muted-foreground'>
-              &copy; 2024 Palačinke Dostava. Sva prava zadržana. Napravljeno sa
-              ❤️ u Beogradu.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

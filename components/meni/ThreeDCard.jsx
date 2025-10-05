@@ -9,7 +9,7 @@ export function ThreeDCard({ naziv, slika, cena, desc, cardHoverShadow }) {
   return (
     <CardContainer className='inter-var'>
       <CardBody
-        className={`bg-gradient-to-br from-orange-600 to-accent relative group/card  hover:shadow-2xl   opacity-80 hover:opacity-100 border-orange-900/[0.1]  w-[300px]  sm:w-[21rem] h-auto rounded-xl px-6 pt-6 pb-3 border ${
+        className={`bg-gradient-to-br from-orange-500 to-accent relative group/card hover:shadow-gray-500 hover:shadow-2xl   opacity-80 hover:opacity-100 border-orange-900/[0.1]  w-[300px]  sm:w-[21rem] h-auto rounded-xl px-6 pt-6 pb-3 border ${
           cardHoverShadow || ''
         }`}
       >
@@ -32,13 +32,13 @@ export function ThreeDCard({ naziv, slika, cena, desc, cardHoverShadow }) {
             src={slika}
             height='500'
             width='500'
-            className='h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl border border-white/0.1'
+            className='h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl border border-white/0.2'
             alt='thumbnail'
           />
         </CardItem>
         <div className='flex justify-between items-center mt-4 h-20'>
           <CardItem
-            translateZ={20}
+            translateZ={70}
             as='div'
             className='px-4  rounded-xl text-xs font-normal text-gray-100'
           >

@@ -2,15 +2,6 @@ import { MdFacebook } from 'react-icons/md';
 import { AiFillInstagram } from 'react-icons/ai';
 import { FaLocationDot } from 'react-icons/fa6';
 import { FaPhoneVolume } from 'react-icons/fa6';
-import {
-  IconBrandGithub,
-  IconBrandX,
-  IconExchange,
-  IconHome,
-  IconNewSection,
-  IconTerminal2,
-} from '@tabler/icons-react';
-import Image from 'next/image';
 
 export const links = [
   { href: '/', label: 'Početna' },
@@ -33,86 +24,26 @@ export const socialIcons = [
   },
 ];
 
-export const products = [
-  {
-    title: 'Palačinka sa kremom od jagode',
-    link: '/meni/slatke/22',
-    thumbnail: '/meni/jagoda-krem.jpg',
-  },
-  {
-    title: 'Kinder Bueno',
-    link: '/meni/slatke/12',
-    thumbnail: '/meni/kinder.jpg',
-  },
-  {
-    title: 'Kit Kat',
-    link: '/meni/slatke/11',
-    thumbnail: '/meni/kitket.jpg',
-  },
+const dodaciSlane = [
+  { name: 'Pečenica 60g', price: '150din' },
+  { name: 'Kulen 60g', price: '150din' },
+  { name: 'Miks sireva 150g', price: '150din' },
+];
 
-  {
-    title: 'Rafaelo',
-    link: '/meni/slatke/9',
-    thumbnail: '/meni/rafaelo.jpg',
-  },
-  {
-    title: 'Nutela',
-    link: '/meni/slatke/10',
-    thumbnail: '/meni/nutela.jpg',
-  },
-  {
-    title: 'Mr Tost Sendvič',
-    link: '/meni/sendviči/28',
-    thumbnail: '/meni/mr-tost.jpg',
-  },
-
-  {
-    title: 'Sremački Trio',
-    link: '/meni/slane/7',
-    thumbnail: '/meni/sremacki-trio.jpg',
-  },
-  {
-    title: 'Kulen',
-    link: '/meni/slane/3',
-    thumbnail: '/meni/kulen.jpg',
-  },
-  {
-    title: 'Pečenica',
-    link: '/meni/slane/1',
-    thumbnail: '/meni/pecenica.jpg',
-  },
-  {
-    title: 'Duo Miks',
-    link: '/meni/slane/4',
-    thumbnail: '/meni/duo-mix.jpg',
-  },
-  {
-    title: 'Prazna Proteinska',
-    link: '/meni/proteinske/25',
-    thumbnail: '/meni/prot-prazna.jpg',
-  },
-  {
-    title: 'Lešnik Puter',
-    link: '/meni/proteinske/27',
-    thumbnail: '/meni/prot-lesnik-puter.jpg',
-  },
-  {
-    title: 'Krem od Pistaća',
-    link: '/meni/proteinske/24',
-    thumbnail: '/meni/prot-pistaci.jpg',
-  },
-
-  {
-    title: 'Kikiriki Puter',
-    link: '/meni/proteinske/26',
-    thumbnail: '/meni/prot-kikiriki-puter.jpg',
-  },
-
-  {
-    title: 'Kikiriki Puter i Džem',
-    link: '/meni/proteinske/23',
-    thumbnail: '/meni/prot-kikiriki-puter-dz.jpg',
-  },
+const dodaciSlatke = [
+  { name: 'Plazma', price: '30din' },
+  { name: 'Plazma u mleku', price: '50din' },
+  { name: 'Preliv od karamele', price: '60din' },
+  { name: 'Kokos', price: '30din' },
+  { name: 'Kikiriki', price: '60din' },
+  { name: 'Crveno voće miks', price: '80din' },
+  { name: 'Banana', price: '60din' },
+  { name: 'Čoko kuglice miks', price: '50din' },
+  { name: 'Badem', price: '80din' },
+  { name: 'Lešnik', price: '80din' },
+  { name: 'Orasi', price: '90din' },
+  { name: 'Višnje', price: '80din' },
+  { name: 'Maline', price: '100din' },
 ];
 
 export const meni = [
@@ -123,11 +54,11 @@ export const meni = [
     price: 350,
     img: '/meni/pecenica.jpg',
     desc: ['Pečenica', 'pavlaka', 'sir'],
-    dodaci: [
-      'Pečenica 60g +150din',
-      'Kulen 60g +150din',
-      'Miks sireva 150g +150din',
-    ],
+    opis1:
+      'Neodoljiva palačinka sa dimljenom pečenicom, pavlakom i sirom — savršen spoj ukusa za ljubitelje slanih specijaliteta.',
+    opis2:
+      'Topla, hrskava i kremasta palačinka koja spaja bogat ukus pečenice i nežnost pavlake. Idealna za dobar početak dana.',
+    dodaci: dodaciSlane,
   },
   {
     id: 2,
@@ -136,11 +67,11 @@ export const meni = [
     price: 310,
     img: '/meni/index.jpg',
     desc: ['Pica šunka', 'sir', 'šampinjoni', 'origano', 'kečap'],
-    dodaci: [
-      'Pečenica 60g +150din',
-      'Kulen 60g +150din',
-      'Miks sireva 150g +150din',
-    ],
+    opis1:
+      'Inspirisana legendarnim indeks sendvičem, ova palačinka nudi savršen balans šunke, sira, šampinjona i origana.',
+    opis2:
+      'Zatvori oči i oseti poznati miris pice u obliku palačinke — to je naš Indeks klasik koji nikad ne razočara.',
+    dodaci: dodaciSlane,
   },
   {
     id: 3,
@@ -149,11 +80,11 @@ export const meni = [
     price: 360,
     img: '/meni/kulen.jpg',
     desc: ['Kulen', 'sir', 'pavlaka'],
-    dodaci: [
-      'Pečenica 60g +150din',
-      'Kulen 60g +150din',
-      'Miks sireva 150g +150din',
-    ],
+    opis1:
+      'Pikantna i sočna palačinka sa kulenom, sirom i pavlakom za prave gurmane koji vole jak i bogat ukus.',
+    opis2:
+      'Kulen u savršenom zagrljaju sa sirom i pavlakom — kombinacija koja će probuditi sva čula.',
+    dodaci: dodaciSlane,
   },
   {
     id: 4,
@@ -162,11 +93,11 @@ export const meni = [
     price: 380,
     img: '/meni/duo-mix.jpg',
     desc: ['Kulen', 'pečenica', 'sir', 'pavlaka'],
-    dodaci: [
-      'Pečenica 60g +150din',
-      'Kulen 60g +150din',
-      'Miks sireva 150g +150din',
-    ],
+    opis1:
+      'Kulen i pečenica u savršenom tandemu, sa sirom i pavlakom, stvaraju neodoljivi miks punog ukusa.',
+    opis2:
+      'Za one koji ne žele da biraju između kulena i pečenice — Duo Miks donosi najbolje od oba sveta.',
+    dodaci: dodaciSlane,
   },
   {
     id: 5,
@@ -175,11 +106,11 @@ export const meni = [
     price: 400,
     img: '/meni/specijal.jpg',
     desc: ['Belo meso', 'sir', 'šampinjoni', 'majonez', 'pavlaka'],
-    dodaci: [
-      'Pečenica 60g +150din',
-      'Kulen 60g +150din',
-      'Miks sireva 150g +150din',
-    ],
+    opis1:
+      'Naš najpoznatiji specijalitet — kombinacija belog mesa, sira i šampinjona u kremastom sosu od majoneza i pavlake.',
+    opis2:
+      'Svaki zalogaj je pun kremaste harmonije i savršeno začinjenih sastojaka. Probaj specijal koji svi hvale!',
+    dodaci: dodaciSlane,
   },
   {
     id: 6,
@@ -188,11 +119,11 @@ export const meni = [
     price: 320,
     img: '/meni/duvan-cvarci.jpg',
     desc: ['Duvan čvarci', 'miks sireva', 'kečap', 'majonez'],
-    dodaci: [
-      'Pečenica 60g +150din',
-      'Kulen 60g +150din',
-      'Miks sireva 150g +150din',
-    ],
+    opis1:
+      'Hrskavi duvan čvarci i bogat miks sireva čine ovu palačinku pravim delikatesom domaće kuhinje.',
+    opis2:
+      'Autentičan ukus tradicije u modernom obliku palačinke — savršen spoj topline i punog ukusa.',
+    dodaci: dodaciSlane,
   },
   {
     id: 7,
@@ -201,11 +132,11 @@ export const meni = [
     price: 400,
     img: '/meni/sremacki-trio.jpg',
     desc: ['Pečenica', 'duvan čvarci', 'miks sireva'],
-    dodaci: [
-      'Pečenica 60g +150din',
-      'Kulen 60g +150din',
-      'Miks sireva 150g +150din',
-    ],
+    opis1:
+      'Tri heroja sremačke kuhinje u jednoj palačinki — pečenica, duvan čvarci i sirevi punog ukusa.',
+    opis2:
+      'Rustičan šarm i bogat ukus u svakom zalogaju. Sremački trio spaja tradiciju i užitak.',
+    dodaci: dodaciSlane,
   },
   {
     id: 8,
@@ -214,21 +145,11 @@ export const meni = [
     price: 290,
     img: '/meni/jafa.jpg',
     desc: ['Krem od mlečne čokolade sa notom narandže'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Nežna palačinka sa kremom od čokolade i narandže — ukus koji podseća na legendarni Jafa kolač.',
+    opis2:
+      'Osvežavajuća nota narandže i bogat čokoladni krem stvaraju savršenu harmoniju slatkoće.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 9,
@@ -237,21 +158,11 @@ export const meni = [
     price: 290,
     img: '/meni/rafaelo.jpg',
     desc: ['Beli krem na bazi kokosa sa ukusom rafaelo kuglica'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Lagani krem od kokosa u mekoj palačinki — pravi raj za ljubitelje Rafaelo ukusa.',
+    opis2:
+      'Oseti miris kokosa i mlečne slasti u savršeno izbalansiranoj rafaelo kombinaciji.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 10,
@@ -260,21 +171,11 @@ export const meni = [
     price: 300,
     img: '/meni/nutela.jpg',
     desc: ['Nutela krem na bazi lešnika'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Klasik koji nikad ne izlazi iz mode — palačinka bogato premazana neodoljivom nutelom.',
+    opis2:
+      'Savršen balans mekanog testa i kremastog lešnikovog ukusa koji osvaja svakog sladokusca.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 11,
@@ -283,21 +184,11 @@ export const meni = [
     price: 310,
     img: '/meni/kitket.jpg',
     desc: ['Kit Kat krem sa izdrobljenim čokoladicama'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Hrskava i čokoladna eksplozija ukusa — Kit Kat palačinka donosi zabavu u svakom zalogaju.',
+    opis2:
+      'Spoj kremastog i hrskavog, idealan za one koji vole čokoladne avanture.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 12,
@@ -306,21 +197,11 @@ export const meni = [
     price: 290,
     img: '/meni/kinder.jpg',
     desc: ['Kinder Bueno fil'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Neodoljiva palačinka punjena kremom po uzoru na Kinder Bueno — kremasta, blaga i savršeno slatka.',
+    opis2:
+      'Ukus detinjstva u elegantnoj formi palačinke. Lagana i bogata u isto vreme.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 13,
@@ -329,21 +210,11 @@ export const meni = [
     price: 210,
     img: '/meni/dzem.jpg',
     desc: ['Domaci džemovi'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Jednostavna i savršena — domaći džem u mekanoj palačinki, kao iz bakine kuhinje.',
+    opis2:
+      'Slatkoća domaćih džemova donosi toplinu i nostalgiju u svakom zalogaju.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 14,
@@ -352,21 +223,11 @@ export const meni = [
     price: 270,
     img: '/meni/euro-krem.jpg',
     desc: ['euro krem'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Neodoljivi spoj mlečnog i crnog krema u palačinki koja se topi u ustima.',
+    opis2:
+      'Za sve koji vole klasičan ukus eurokrema u jednostavnom, a bogatom desertu.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 15,
@@ -375,21 +236,11 @@ export const meni = [
     price: 190,
     img: '/meni/krem.jpg',
     desc: ['crno-beli krem'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Crno-beli krem daje ovoj palačinki posebnu dozu kontrasta i slatkog zadovoljstva.',
+    opis2:
+      'Jednostavna, a savršeno slatka — uživanje u svakom sloju kremaste kombinacije.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 16,
@@ -398,21 +249,11 @@ export const meni = [
     price: 250,
     img: '/meni/beli-krem.jpg',
     desc: ['Beli mlečni krem na bazi lešnika'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Kremasta i nežna palačinka sa belim kremom od lešnika koja osvaja svojom finoćom.',
+    opis2:
+      'Savršeno lagan desert koji oduševljava ukusom mlečne slasti i lešnika.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 17,
@@ -421,21 +262,11 @@ export const meni = [
     price: 260,
     img: '/meni/vanila.jpg',
     desc: ['Vanila krem'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Klasičan ukus vanile pretvoren u savršeno kremastu palačinku koja miriše na detinjstvo.',
+    opis2:
+      'Nežna, mirisna i lagana palačinka za one koji vole profinjene slatke note.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 18,
@@ -444,21 +275,11 @@ export const meni = [
     price: 310,
     img: '/meni/ferero.jpg',
     desc: ['Crni krem sa komadićima lešnika'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Bogata palačinka inspirisana Ferero Roše kuglicama — čokolada i lešnik u savršenom spoju.',
+    opis2:
+      'Luksuzan desert za posebne trenutke. Intenzivan, kremast i nezaboravan.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 19,
@@ -467,44 +288,24 @@ export const meni = [
     price: 310,
     img: '/meni/dz-bez-secera.jpg',
     desc: ['Domaći džemovi bez dodatog šećera'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Zdrava varijanta omiljenog klasika — domaći džem bez dodatog šećera u laganoj palačinki.',
+    opis2:
+      'Prirodna slatkoća i bogat ukus voća, bez griže savesti. Idealno za ljubitelje balansirane ishrane.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 20,
-    title: 'palačinka sa kremom od pistaća',
+    title: 'Palačinka sa kremom od pistaća',
     category: 'slatke',
     price: 360,
     img: '/meni/pistaci.jpg',
     desc: ['krem od pistaća'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Pistacije u svojoj najlepšoj formi — kremasti, aromatični i nežni u savršenom testu.',
+    opis2:
+      'Elegantna slatka palačinka sa kremom od pistaća za prave sladokusce.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 21,
@@ -513,21 +314,11 @@ export const meni = [
     price: 210,
     img: '/meni/krem-plazma.jpg',
     desc: ['crno-beli krem sa plazmom'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Spoj kremastog crno-belog fila i neodoljive plazme stvara savršenu kombinaciju poznatog ukusa.',
+    opis2:
+      'Palačinka koja vraća osmeh na lice — jednostavna, a puna domaće topline.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 22,
@@ -536,160 +327,104 @@ export const meni = [
     price: 210,
     img: '/meni/jagoda-krem.jpg',
     desc: ['Mlečni krem od jagoda'],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Slatka i osvežavajuća palačinka sa kremom od jagoda, savršena za sve ljubitelje voćnih deserta.',
+    opis2:
+      'Voćna eksplozija u svakom zalogaju — jagoda i mlečni krem u nežnom testu.',
+    dodaci: dodaciSlatke,
   },
-
   {
     id: 23,
-    title: 'proteinska palačinka sa kikiriki puterom i džemom',
+    title: 'Proteinska palačinka sa kikiriki puterom i džemom',
     category: 'proteinske',
     price: 360,
     img: '/meni/prot-kikiriki-puter-dz.jpg',
     desc: [
-      '6 vrsta brašna, bez belog brašna i dodatog sećera',
+      '6 vrsta brašna',
+      'bez belog brašna i dodatog sećera',
       '15 do 25g proteina po porciji',
       'kikiriki puter i džem',
     ],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Zdrava, bogata proteinima i puna ukusa — kikiriki puter i džem u savršenoj ravnoteži.',
+    opis2:
+      'Energetska bomba sa zdravim sastojcima za one koji žele užitak bez griže savesti.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 24,
-    title: 'proteinska palačinka sa kremom od pistaća',
+    title: 'Proteinska palačinka sa kremom od pistaća',
     category: 'proteinske',
     price: 450,
     img: '/meni/prot-pistaci.jpg',
     desc: [
-      '6 vrsta brašna, bez belog brašna i dodatog sećera',
+      '6 vrsta brašna',
+      'bez belog brašna i dodatog sećera',
       '15 do 25g proteina po porciji',
       'krem od pistaća',
     ],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Savršena kombinacija zdravog i luksuznog — proteini i pistaći u kremastoj harmoniji.',
+    opis2:
+      'Ukus koji spaja fitnes i uživanje. Lagana, hranljiva i neverovatno ukusna palačinka.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 25,
-    title: 'prazna proteinska palačinka',
+    title: 'Prazna proteinska palačinka',
     category: 'proteinske',
     price: 250,
     img: '/meni/prot-prazna.jpg',
     desc: [
-      '6 vrsta brašna, bez belog brašna i dodatog sećera',
+      '6 vrsta brašna',
+      'bez belog brašna i dodatog sećera',
       '15 do 25g proteina po porciji',
     ],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Minimalistička proteinska palačinka za one koji vole jednostavnost i čistu energiju.',
+    opis2:
+      'Zdrava osnova koju možeš kombinovati po želji — lagana, hranljiva i svestrana.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 26,
-    title: 'proteinska palačinka sa kikiriki puterom',
+    title: 'Proteinska palačinka sa kikiriki puterom',
     category: 'proteinske',
     price: 300,
     img: '/meni/prot-kikiriki-puter.jpg',
     desc: [
-      '6 vrsta brašna, bez belog brašna i dodatog sećera',
+      '6 vrsta brašna',
+      'bez belog brašna i dodatog sećera',
       '15 do 25g proteina po porciji',
       'kikiriki puter',
     ],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Proteinska poslastica sa bogatim ukusom kikiriki putera i punim hranljivih vrednosti.',
+    opis2:
+      'Idealna za aktivne ljude koji žele zdravo, ukusno i zasitno uživanje.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 27,
-    title: 'proteinska palačinka sa lešnik puterom',
+    title: 'Proteinska palačinka sa lešnik puterom',
     category: 'proteinske',
     price: 500,
     img: '/meni/prot-lesnik-puter.jpg',
     desc: [
-      '6 vrsta brašna, bez belog brašna i dodatog sećera',
+      '6 vrsta brašna',
+      'bez belog brašna i dodatog sećera',
       '15 do 25g proteina po porciji',
       'lešnik puter',
     ],
-    dodaci: [
-      'Plazma +30din',
-      'Plazma u mleku +50din',
-      'Preliv od karamele +60din',
-      'Kokos +30din',
-      'Kikiriki +60din',
-      'Crveno voće miks +80din',
-      'Banana +60din',
-      'Čoko kuglice miks +50din',
-      'Badem +80din',
-      'Lešnik +80din',
-      'Orasi +90din',
-      'Višnje +80din',
-      'Maline +100din',
-    ],
+    opis1:
+      'Luksuzna proteinska palačinka sa puterom od lešnika — energija, ukus i zdravlje u jednom.',
+    opis2:
+      'Kremasta, hranljiva i savršeno izbalansirana palačinka za sladokusce koji paze na ishranu.',
+    dodaci: dodaciSlatke,
   },
   {
     id: 28,
-    title: 'mister pačalinković tost sendvič',
+    title: 'Mr Pačalinković tost sendvič',
     category: 'sendviči',
     price: 250,
     img: '/meni/mr-tost.jpg',
@@ -700,95 +435,127 @@ export const meni = [
       'pavlaka',
       'majonez',
     ],
-    dodaci: [
-      'Pečenica 60g +150din',
-      'Kulen 60g +150din',
-      'Miks sireva 150g +150din',
-    ],
+    opis1:
+      'Specijalni tost sa smesom od belog mesa i četiri vrste sira — pravi kremasti užitak.',
+    opis2:
+      'Zlatno pečen tost sa savršeno topljenim sirom i domaćim sosom. Ukus koji osvaja.',
+    dodaci: dodaciSlane,
   },
   {
     id: 29,
-    title: 'tost sendvič',
+    title: 'Tost sendvič',
     category: 'sendviči',
     price: 200,
     img: '/meni/tost.jpg',
     desc: ['Tost hleb', 'puter', 'pica šunka', 'četiri vrste sira'],
-    dodaci: [
-      'Pečenica 60g +150din',
-      'Kulen 60g +150din',
-      'Miks sireva 150g +150din',
-    ],
+    opis1:
+      'Klasičan tost sendvič sa šunkom, puterom i mešavinom sireva — jednostavno savršen.',
+    opis2:
+      'Topao, mirisan i hrskav sendvič koji uvek pogađa pravo mesto — klasik koji nikad ne razočara.',
+    dodaci: dodaciSlane,
   },
   {
     id: 30,
-    title: 'koka-kola',
+    title: 'Koka-kola',
     category: 'piće',
     price: 120,
     img: '/meni/kola.jpg',
     desc: ['koka-kola'],
+    opis1:
+      'Osvežavajuća Koka-kola koja savršeno upotpunjuje svaku slanu palačinku — posebno onu sa pečenicom.',
+    opis2:
+      'Idealna za balans slanih ukusa, Koka-kola donosi pravi kontrast uz bilo koji specijalitet sa pavlakom ili sirom.',
     dodaci: [],
   },
   {
     id: 31,
-    title: 'koka-kola zero',
+    title: 'Koka-kola Zero',
     category: 'piće',
     price: 120,
     img: '/meni/kola-zero.jpg',
     desc: ['koka-kola zero'],
+    opis1:
+      'Kola bez šećera koja ne pravi kompromis sa ukusom — odličan par uz proteinske palačinke.',
+    opis2:
+      'Lagani i sveži izbor koji osvežava nakon svake slatke palačinke, a posebno uz pistacije ili lešnik puter.',
     dodaci: [],
   },
   {
     id: 32,
-    title: 'fanta narandža',
+    title: 'Fanta narandža',
     category: 'piće',
     price: 120,
     img: '/meni/fanta.jpg',
     desc: ['fanta narandža'],
+    opis1:
+      'Voćna svežina Fante idealno prati lagane palačinke sa džemom ili vanilom.',
+    opis2:
+      'Osvežavajuća nota narandže koja se divno slaže sa svilenkastim kremovima i slatkim punjenjima.',
     dodaci: [],
   },
   {
     id: 33,
-    title: 'sprajt',
+    title: 'Sprajt',
     category: 'piće',
     price: 120,
     img: '/meni/sprajt.jpg',
     desc: ['sprajt'],
+    opis1:
+      'Blaga citrusna svežina koja razbija slatkoću i čini da svaki zalogaj palačinke bude kao prvi.',
+    opis2:
+      'Savršen pratilac uz slatke klasike poput Nutele ili Rafaela — osvežava bez težine.',
     dodaci: [],
   },
   {
     id: 34,
-    title: 'šveps mojito',
+    title: 'Šveps mojito',
     category: 'piće',
     price: 120,
     img: '/meni/sch-mojito.jpg',
     desc: ['šveps mojito'],
+    opis1:
+      'Šveps Mojito donosi aromu mente i limete koja se savršeno uklapa uz proteinske palačinke.',
+    opis2:
+      'Lagani citrusni twist koji osvežava posle svake bogate palačinke sa kremom ili voćnim punjenjem.',
     dodaci: [],
   },
   {
     id: 35,
-    title: 'rosa',
+    title: 'Rosa',
     category: 'piće',
     price: 90,
     img: '/meni/rosa-neg.jpg',
     desc: ['rosa'],
+    opis1:
+      'Prirodna negazirana voda koja čisti nepce i ističe bogat ukus svake palačinke.',
+    opis2:
+      'Savršen izbor uz bilo koji desert — neutralna i nežna, da uživaš samo u ukusu palačinke.',
     dodaci: [],
   },
   {
     id: 36,
-    title: 'rosa gazirana',
+    title: 'Rosa gazirana',
     category: 'piće',
     price: 90,
     img: '/meni/rosa-gaz.jpg',
     desc: ['rosa gazirana'],
+    opis1:
+      'Blago gazirana Rosa donosi osveženje uz slane palačinke poput Duo Miks ili Sremački trio.',
+    opis2:
+      'Idealna za one koji vole mehuriće uz zalogaje bogate pavlakom i sirom — diskretno i fino.',
     dodaci: [],
   },
   {
     id: 37,
-    title: 'next limunada',
+    title: 'Next limunada',
     category: 'piće',
     price: 140,
     img: '/meni/next-lim.jpg',
     desc: ['next limunada'],
+    opis1:
+      'Voćno-kiselkasta limunada koja daje savršen kontrast uz palačinke sa kremom ili plazmom.',
+    opis2:
+      'Lagani, letnji ukus koji se odlično slaže sa slatkim punjenjima od vanile i čokolade.',
     dodaci: [],
   },
 ];
@@ -803,113 +570,10 @@ export const radnoVr = [
   { dan: 'Nedelja', sat: '12:00 do 22:45' },
 ];
 
-export const floatingLinks = [
-  {
-    title: 'Alideda',
-    icon: (
-      <Image
-        src='/logo/alideda-emb.png'
-        width={20}
-        height={20}
-        alt='Alideda Logo'
-      />
-    ),
-    href: 'https://www.alideda.rs/mister-pacalinkovic-dostava-sremska-mitrovica',
-  },
-  {
-    title: 'Wolt',
-    icon: (
-      <Image
-        src='/logo/wolt-logo.png'
-        width={20}
-        height={20}
-        alt='Wolt Logo'
-        className='font-lg'
-      />
-    ),
-    href: 'https://wolt.com/sr/srb/sremska-mitrovica/restaurant/mister-paalinkovi',
-  },
-  {
-    title: 'Facebook',
-    icon: (
-      <Image
-        src='/logo/brand-facebook.svg'
-        width={30}
-        height={30}
-        alt='Facebook Logo'
-        className='font-lg'
-      />
-    ),
-    href: 'https://www.facebook.com/p/Palacinkarnica-Mister-Pacalinkovic-100068327874172/',
-  },
-  {
-    title: 'Instagram',
-    icon: (
-      <Image
-        src='/logo/brand-instagram.svg'
-        width={20}
-        height={20}
-        alt='Instagram Logo'
-        className='font-lg'
-      />
-    ),
-    href: 'https://www.instagram.com/p/BfyUoFtAwog/',
-  },
-  {
-    title: 'Google Mape',
-    icon: (
-      <Image
-        src='/logo/map-pin.svg'
-        width={20}
-        height={20}
-        alt='Google Mape'
-        className='font-lg'
-      />
-    ),
-    href: 'https://www.google.com/maps/place/Mister+Pa%C4%8Dalinkovi%C4%87/@44.9669718,19.6094189,15z/data=!4m6!3m5!1s0x475ba53e94ecba47:0x86dc485657b2d93f!8m2!3d44.9669718!4d19.6094189!16s%2Fg%2F11tfb7l9lj?entry=ttu',
-  },
-  {
-    title: 'Poziv',
-    icon: (
-      <Image
-        src='/logo/phone-call.svg'
-        width={20}
-        height={20}
-        alt='Telefon'
-        className='font-lg'
-      />
-    ),
-    href: 'tel:+381645574037',
-  },
-];
-
 export const sidebarSocialIcons = [
   {
     href: 'tel:+381645574037',
     icon: <FaPhoneVolume className='text-lg' />,
-  },
-  {
-    href: 'https://www.alideda.rs/mister-pacalinkovic-dostava-sremska-mitrovica',
-    icon: (
-      <Image
-        src='/logo/alideda-emb.png'
-        width={20}
-        height={20}
-        alt='Alideda Logo'
-      />
-    ),
-  },
-  {
-    href: 'https://wolt.com/sr/srb/sremska-mitrovica/restaurant/mister-paalinkovi',
-    icon: (
-      <Image
-        src='/logo/wolt-logo.png'
-        width={20}
-        height={20}
-        alt='Wolt Logo'
-        className='font-lg '
-      />
-    ),
   },
   {
     href: 'https://www.facebook.com/p/Palacinkarnica-Mister-Pacalinkovic-100068327874172/',
