@@ -4,7 +4,7 @@ import { motion, stagger, useAnimate } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 export const TextGenerateEffect = ({
-  words,
+  words = '', // default na prazan string
   className,
   filter = true,
   duration = 1.5,
@@ -12,7 +12,7 @@ export const TextGenerateEffect = ({
   textColor = 'text-white',
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(' ');
+  let wordsArray = typeof words === 'string' ? words.split(' ') : [];
   useEffect(() => {
     animate(
       'span',

@@ -4,7 +4,7 @@ import { Star, Clock, Users, AlertCircle } from 'lucide-react';
 import CallBtn from '@/components/single-product/CallBtn';
 import BackToMenuBtn from '@/components/single-product/BackToMenuBtn';
 
-export const dynamicParams = true;
+// export const dynamicParams = true; //ne moze sa output: 'export'
 
 export async function generateStaticParams() {
   return [

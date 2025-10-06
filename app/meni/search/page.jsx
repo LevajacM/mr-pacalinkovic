@@ -78,6 +78,31 @@ import Naslov from '@/components/global/Naslov';
 import { getProductsBySearch } from '@/utils/actions';
 import { useEffect, useState } from 'react';
 
+const smoothScrollDown = (duration = 400) => {
+  if (typeof window === 'undefined') return;
+
+  const element = document.getElementById('smooth-sc');
+  if (!element) return;
+
+  const start = window.scrollY;
+  const end = element.getBoundingClientRect().top + window.scrollY;
+  const distance = end - start;
+  const step = distance / (duration / 16); // otprilike 60 FPS
+  let current = start;
+
+  const scroll = () => {
+    current += step;
+    window.scrollTo(0, current);
+    if ((step > 0 && current < end) || (step < 0 && current > end)) {
+      requestAnimationFrame(scroll);
+    } else {
+      window.scrollTo(0, end);
+    }
+  };
+
+  scroll();
+};
+
 export default function SearchPage() {
   const searchParams = useSearchParams();
   const query = searchParams.get('query') || '';
@@ -87,7 +112,10 @@ export default function SearchPage() {
     if (query) {
       const results = getProductsBySearch(query);
       setArtikli(results);
-      window.scrollTo({ top: 0, behavior: 'smooth' }); // smooth scroll
+
+      setTimeout(() => {
+        smoothScrollDown();
+      }, 100);
     }
   }, [query]);
 
@@ -118,11 +146,13 @@ export default function SearchPage() {
 
   return (
     <>
-      <Naslov
-        tekst={`Rezultati pretrage`}
-        trajanje={2.6}
-        klase='text-3xl sm:text-4xl lg:text-5xl'
-      />
+      <div id='smooth-sc'>
+        <Naslov
+          tekst={`Rezultati pretrage`}
+          trajanje={2.6}
+          klase='text-3xl sm:text-4xl lg:text-5xl'
+        />
+      </div>
 
       <Grid klase='2xl:grid-cols-4'>
         {artikli.map((item) => (

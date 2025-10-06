@@ -82,12 +82,23 @@ const PancakeHomepage = () => {
               rel='noopener noreferrer'
             >
               <Button className='bg-gradient-to-br from-primary to-accent hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(255,165,0,0.4)]  transition-all duration-300 text-lg px-8 py-6 rounded-2xl w-full border border-white hover:shadow-white font-bold'>
-                <Image
+                {/* ***************************************** */}
+                {/* <Image
                   src='/logo/alideda-emb.png'
                   width={20}
                   height={20}
                   className='mr-2 h-5 w-5'
                   alt='Alidede Logo'
+                /> */}
+                {/* ***************************************** */}
+                <img
+                  src='/logo/alideda-emb.png'
+                  width={20}
+                  height={20}
+                  className='mr-2 h-5 w-5'
+                  alt='Alidede Logo'
+                  loading='lazy'
+                  style={{ display: 'inline-block', verticalAlign: 'middle' }}
                 />
                 Poruči preko Alidede
               </Button>
@@ -99,12 +110,23 @@ const PancakeHomepage = () => {
               rel='noopener noreferrer'
             >
               <Button className='bg-gradient-to-br from-primary to-accent hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(255,165,0,0.4)]  transition-all duration-300 text-lg px-8 py-6 rounded-2xl w-full border border-white hover:shadow-white font-bold'>
-                <Image
+                {/* ***************************************** */}
+                {/* <Image
                   src='/logo/wolt-logo.png'
                   width={20}
                   height={20}
                   className='mr-2 h-5 w-5'
                   alt='Wolt Logo'
+                /> */}
+                {/* ***************************************** */}
+                <img
+                  src='/logo/wolt-logo.png'
+                  width={20}
+                  height={20}
+                  className='mr-2 h-5 w-5'
+                  alt='Wolt Logo'
+                  loading='lazy'
+                  style={{ display: 'inline-block', verticalAlign: 'middle' }}
                 />
                 Poruči preko Wolta
               </Button>

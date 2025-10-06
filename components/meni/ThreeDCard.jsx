@@ -28,12 +28,24 @@ export function ThreeDCard({ naziv, slika, cena, desc, cardHoverShadow }) {
           {cena} Din
         </CardItem>
         <CardItem translateZ='100' className='w-full mt-4'>
-          <Image
+          {/* ***************************************** */}
+          {/* <Image
             src={slika}
             height='500'
             width='500'
             className='h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl border border-white/0.2'
             alt='thumbnail'
+          /> */}
+          {/* ***************************************** */}
+
+          <img
+            src={slika}
+            height={500}
+            width={500}
+            className='h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl border border-white/0.2'
+            alt='thumbnail'
+            loading='lazy'
+            style={{ display: 'block' }}
           />
         </CardItem>
         <div className='flex justify-between items-center mt-4 h-20'>

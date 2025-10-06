@@ -31,16 +31,13 @@ export const getSingleProduct = (id) => {
   return artikal;
 };
 
-export const getProductsBySearch = (searchWord) => {
-  if (searchWord) {
-    const filteredItems = meni.filter((item) => {
-      return (
-        item.title.toLowerCase().includes(searchWord.toLowerCase()) ||
-        item.desc.join(' ').toLowerCase().includes(searchWord.toLowerCase())
-      );
-    });
-    return filteredItems;
-  } else {
-    return [];
-  }
+export const getProductsBySearch = (query) => {
+  if (!query) return [];
+
+  const artikli = meni.filter(
+    (product) =>
+      product.title.toLowerCase().includes(query.toLowerCase()) ||
+      product.desc.join(' ').toLowerCase().includes(query.toLowerCase())
+  );
+  return artikli;
 };

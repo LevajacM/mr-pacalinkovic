@@ -7,44 +7,123 @@ import {
   Dessert,
   Drumstick,
   BicepsFlexed,
+  Sandwich,
+  CupSoda,
 } from 'lucide-react';
 import Link from 'next/link';
 import SearchForm from './SearchForm';
+import { usePathname } from 'next/navigation';
 
 const MenuHeader = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  // const [selectedCategory, setSelectedCategory] = useState('all');
+  const pathname = usePathname();
+
+  // const categories = [
+  //   {
+  //     id: 'all',
+  //     name: 'Sve palačinke',
+  //     icon: UtensilsCrossed,
+  //     link: 'sve',
+  //   },
+  //   {
+  //     id: 'slatke',
+  //     name: 'Slatke',
+  //     icon: Dessert,
+  //     link: 'slatke',
+  //   },
+  //   {
+  //     id: 'slane',
+  //     name: 'Slane',
+  //     icon: Drumstick,
+  //     link: 'slane',
+  //   },
+  //   {
+  //     id: 'proteinske',
+  //     name: 'Proteinske',
+  //     icon: BicepsFlexed,
+  //     link: 'proteinske',
+  //   },
+  //   {
+  //     id: 'sendvici',
+  //     name: 'Sendviči',
+  //     icon: BicepsFlexed,
+  //     link: 'sendvici',
+  //   },
+  //   {
+  //     id: 'pice',
+  //     name: 'Piće',
+  //     icon: BicepsFlexed,
+  //     link: 'pice',
+  //   },
+  // ];
+
+  // const smoothScrollDown = (duration = 400) => {
+  //   const element = document.getElementById('smooth-scroll');
+  //   if (!element) return;
+
+  //   const start = window.scrollY;
+  //   const end = element.getBoundingClientRect().top + window.scrollY;
+  //   const distance = end - start;
+  //   const step = distance / (duration / 16); // otprilike 60 FPS
+  //   let current = start;
+
+  //   const scroll = () => {
+  //     current += step;
+  //     window.scrollTo(0, current);
+  //     if ((step > 0 && current < end) || (step < 0 && current > end)) {
+  //       requestAnimationFrame(scroll);
+  //     } else {
+  //       window.scrollTo(0, end);
+  //     }
+  //   };
+
+  //   scroll();
+  // };
 
   const categories = [
-    { id: 'all', name: 'Sve palačinke', icon: UtensilsCrossed },
-    { id: 'slatke', name: 'slatke', icon: Dessert },
-    { id: 'slane', name: 'slane', icon: Drumstick },
-    { id: 'proteinske', name: 'proteinske', icon: BicepsFlexed },
-    { id: 'sendvici', name: 'sendviči', icon: BicepsFlexed },
-    { id: 'pice', name: 'piće', icon: BicepsFlexed },
+    {
+      id: 'all',
+      name: 'Sve palačinke',
+      icon: UtensilsCrossed,
+      link: '',
+      paths: ['/meni'],
+    },
+    {
+      id: 'slatke',
+      name: 'Slatke',
+      icon: Dessert,
+      link: 'slatke',
+      paths: ['/meni/slatke'],
+    },
+    {
+      id: 'slane',
+      name: 'Slane',
+      icon: Drumstick,
+      link: 'slane',
+      paths: ['/meni/slane'],
+    },
+    {
+      id: 'proteinske',
+      name: 'Proteinske',
+      icon: BicepsFlexed,
+      link: 'proteinske',
+      paths: ['/meni/proteinske'],
+    },
+    {
+      id: 'sendvici',
+      name: 'Sendviči',
+      icon: Sandwich,
+      link: 'sendvici',
+      paths: ['/meni/sendvici'],
+    },
+    {
+      id: 'pice',
+      name: 'Piće',
+      icon: CupSoda,
+      link: 'pice',
+      paths: ['/meni/pice'],
+    },
   ];
-
-  const smoothScrollDown = (duration = 400) => {
-    const element = document.getElementById('smooth-scroll');
-    if (!element) return;
-
-    const start = window.scrollY;
-    const end = element.getBoundingClientRect().top + window.scrollY;
-    const distance = end - start;
-    const step = distance / (duration / 16); // otprilike 60 FPS
-    let current = start;
-
-    const scroll = () => {
-      current += step;
-      window.scrollTo(0, current);
-      if ((step > 0 && current < end) || (step < 0 && current > end)) {
-        requestAnimationFrame(scroll);
-      } else {
-        window.scrollTo(0, end);
-      }
-    };
-
-    scroll();
-  };
 
   return (
     <div className='min-h-[85vh] bg-background'>
@@ -90,16 +169,21 @@ const MenuHeader = () => {
           <div className='grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2  h-auto p-2 bg-secondary rounded-md'>
             {categories.map((category, ind) => {
               const Icon = category.icon;
-              const isActive = selectedCategory === category.id;
+              // const isActive = selectedCategory === category.id;
+              // const isActive =
+              //   window.location.pathname === `/meni/${category.link}`;
+              const isActive =
+                pathname === `/meni/${category.link}` ||
+                (pathname === '/meni' && category.link === '');
 
               return (
-                <Link href={`/meni/${category.name}`} key={ind}>
+                <Link href={`/meni/${category.link}`} key={ind}>
                   <Button
                     key={category.id}
-                    onClick={() => {
-                      setSelectedCategory(category.id);
-                      smoothScrollDown();
-                    }}
+                    // onClick={() => {
+                    //   setSelectedCategory(category.id);
+                    //   smoothScrollDown();
+                    // }}
                     className={`flex items-center gap-2 py-3 text-base h-auto transition-all overflow-hidden w-full ${
                       isActive
                         ? 'bg-orange-400 text-primary-foreground hover:bg-primary/90 transition-colors duration-500'

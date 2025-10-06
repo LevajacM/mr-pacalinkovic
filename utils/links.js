@@ -425,7 +425,7 @@ export const meni = [
   {
     id: 28,
     title: 'Mr Pačalinković tost sendvič',
-    category: 'sendviči',
+    category: 'sendvici',
     price: 250,
     img: '/meni/mr-tost.jpg',
     desc: [
@@ -444,7 +444,7 @@ export const meni = [
   {
     id: 29,
     title: 'Tost sendvič',
-    category: 'sendviči',
+    category: 'sendvici',
     price: 200,
     img: '/meni/tost.jpg',
     desc: ['Tost hleb', 'puter', 'pica šunka', 'četiri vrste sira'],
@@ -457,7 +457,7 @@ export const meni = [
   {
     id: 30,
     title: 'Koka-kola',
-    category: 'piće',
+    category: 'pice',
     price: 120,
     img: '/meni/kola.jpg',
     desc: ['koka-kola'],
@@ -470,7 +470,7 @@ export const meni = [
   {
     id: 31,
     title: 'Koka-kola Zero',
-    category: 'piće',
+    category: 'pice',
     price: 120,
     img: '/meni/kola-zero.jpg',
     desc: ['koka-kola zero'],
@@ -483,7 +483,7 @@ export const meni = [
   {
     id: 32,
     title: 'Fanta narandža',
-    category: 'piće',
+    category: 'pice',
     price: 120,
     img: '/meni/fanta.jpg',
     desc: ['fanta narandža'],
@@ -496,7 +496,7 @@ export const meni = [
   {
     id: 33,
     title: 'Sprajt',
-    category: 'piće',
+    category: 'pice',
     price: 120,
     img: '/meni/sprajt.jpg',
     desc: ['sprajt'],
@@ -509,7 +509,7 @@ export const meni = [
   {
     id: 34,
     title: 'Šveps mojito',
-    category: 'piće',
+    category: 'pice',
     price: 120,
     img: '/meni/sch-mojito.jpg',
     desc: ['šveps mojito'],
@@ -522,7 +522,7 @@ export const meni = [
   {
     id: 35,
     title: 'Rosa',
-    category: 'piće',
+    category: 'pice',
     price: 90,
     img: '/meni/rosa-neg.jpg',
     desc: ['rosa'],
@@ -535,7 +535,7 @@ export const meni = [
   {
     id: 36,
     title: 'Rosa gazirana',
-    category: 'piće',
+    category: 'pice',
     price: 90,
     img: '/meni/rosa-gaz.jpg',
     desc: ['rosa gazirana'],
@@ -548,7 +548,7 @@ export const meni = [
   {
     id: 37,
     title: 'Next limunada',
-    category: 'piće',
+    category: 'pice',
     price: 140,
     img: '/meni/next-lim.jpg',
     desc: ['next limunada'],
